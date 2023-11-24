@@ -11,6 +11,7 @@
     "lint": "npx eslint --fix src test"
   },
   "dependencies": {
+    "@zero65/indian-stock-market": "latest",
     "@zero65tech/config": "latest",
     "express": "4.18.x"
   },
