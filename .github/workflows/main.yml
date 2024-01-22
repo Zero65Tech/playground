@@ -1,12 +1,10 @@
 name: Test and Lint
 
 on:
-  push:
-    branches:
-      - master
+  workflow_call:
 
 jobs:
-  lint:
+  Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,25 +17,7 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: node -v
+        run: npm install
 
-      # - name: Run ESLint
-      #   run: npm run lint
-
-  # test:
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v2
-
-  #     - name: Set up Node.js
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: 14
-
-  #     - name: Install dependencies
-  #       run: npm install
-
-  #     - name: Run Jest tests
-  #       run: npm test
+      - name: Run test
+        run: npm run test
