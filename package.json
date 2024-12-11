@@ -19,7 +19,7 @@
     "@zero65tech/log": "4.0.x",
     "@zero65tech/object": "4.0.x",
     "cors": "2.8.x",
-    "express": "4.21.x",
+    "express": "4.20.x",
     "joi": "17.13.x",
     "lodash": "4.17.x"
   },
