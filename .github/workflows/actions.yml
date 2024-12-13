@@ -1,6 +1,9 @@
 name: npm run build
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     types: [ opened, synchronize ]
 
@@ -9,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Commit and push fixes
-        run: |
-          pwd
+        run: pwd
   build:
     uses: ./.github/workflows/build.yml
