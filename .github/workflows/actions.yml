@@ -8,5 +8,10 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
+  env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Env
+        run: env
   build:
     uses: ./.github/workflows/build.yaml
