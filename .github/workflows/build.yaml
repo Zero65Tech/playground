@@ -4,8 +4,7 @@ permissions:
   contents: write
 
 on:
-  pull_request:
-    types: [ opened, synchronize ]
+  workflow_call:
 
 jobs:
   lint:
