@@ -1,0 +1,9 @@
+name: npm run build
+
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+
+jobs:
+  build:
+    uses: zero65tech/playground/.github/workflows/build.yaml@master
