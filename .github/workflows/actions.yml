@@ -12,4 +12,4 @@ jobs:
         run: |
           pwd
   build:
-    uses: zero65tech/playground/.github/workflows/build.yaml@prashant
+    uses: ./.github/workflows/build.yml@prashant
