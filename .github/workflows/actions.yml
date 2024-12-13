@@ -5,5 +5,11 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Commit and push fixes
+        run: |
+          pwd
   build:
     uses: zero65tech/playground/.github/workflows/build.yaml@prashant
