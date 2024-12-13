@@ -6,4 +6,4 @@ on:
 
 jobs:
   build:
-    uses: zero65tech/playground/.github/workflows/build.yaml@master
+    uses: zero65tech/playground/.github/workflows/build.yaml@prashant
