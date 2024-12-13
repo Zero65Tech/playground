@@ -8,10 +8,5 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Commit and push fixes
-        run: pwd
   build:
     uses: ./.github/workflows/build.yaml
