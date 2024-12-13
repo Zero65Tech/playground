@@ -14,4 +14,4 @@ jobs:
       - name: Commit and push fixes
         run: pwd
   build:
-    uses: ./.github/workflows/build.yml
+    uses: .github/workflows/build.yml
