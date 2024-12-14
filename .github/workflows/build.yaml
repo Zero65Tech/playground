@@ -24,7 +24,7 @@ jobs:
           node-version: 16
           cache: 'npm'
       
-      - name: Create .npmrc
+      - name: Set up Private NPM Registry Access
         run: | 
           if [ -n "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" ]; then
             echo "Google Application Credentials found with Secrets"

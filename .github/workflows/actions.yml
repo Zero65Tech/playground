@@ -8,12 +8,18 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
-  env:
+  ls1:
     runs-on: ubuntu-latest
     steps:
       - name: Env
-        run: env
+        run: pwd && ls -al && ls -al ~
   build:
     uses: ./.github/workflows/build.yaml
     secrets:
       GOOGLE_APPLICATION_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}
+  ls2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Env
+        run: pwd && ls -al && ls -al ~
+    
