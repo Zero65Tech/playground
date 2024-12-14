@@ -45,17 +45,11 @@ jobs:
       
       - name: Commit and Push Changes
         run: |
-          echo ${{ github.head_ref }}
-          echo ${{ github.event.pull_request.head.ref }}
-          echo ${{ github.ref_name }}
-          git show-ref
-          git remote -v
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "Zero65 Bot"
             git config user.email "google-cloud-build@zero65.in"
             # git checkout -b test origin/test
             git add .
             git commit -m "npm run build"
-            git push origin HEAD:refs/heads/${{ github.event.pull_request.head.ref }}
-            git log
+            git push
           fi
