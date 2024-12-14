@@ -45,6 +45,7 @@ jobs:
       
       - name: Commit and Push Changes
         run: |
+          echo ${{ github.head_ref }}
           echo ${{ github.event.pull_request.head.ref }}
           echo ${{ github.ref_name }}
           git show-ref
