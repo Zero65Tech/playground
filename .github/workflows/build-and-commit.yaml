@@ -52,8 +52,8 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "Zero65 Bot"
             git config user.email "google-cloud-build@zero65.in"
-            git checkout -b test origin/test
+            # git checkout -b test origin/test
             git add .
             git commit -m "npm run build"
-            git push # origin HEAD:refs/origin/test
+            git push origin HEAD:refs/remotes/origin/test
           fi
