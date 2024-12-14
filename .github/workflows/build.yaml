@@ -30,8 +30,6 @@ jobs:
             echo "Google Application Credentials found with Secrets"
             echo "@zero65:registry=https://asia-south1-npm.pkg.dev/zero65/npm/" > ~/.npmrc
             echo "$GOOGLE_APPLICATION_CREDENTIALS_JSON" > ~/.config/gcloud/application_default_credentials.json
-          else
-            echo "Google Application Credentials NOT found with Secrets"
           fi
       
       - name: Create .npmrc
