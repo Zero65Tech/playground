@@ -55,4 +55,5 @@ jobs:
             git add .
             git commit -m "npm run build"
             git push origin HEAD:refs/remotes/pull/${{ github.event.pull_request.head.ref }}
+            git log
           fi
