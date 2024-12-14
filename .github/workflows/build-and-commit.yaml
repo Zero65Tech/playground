@@ -55,6 +55,6 @@ jobs:
             # git checkout -b test origin/test
             git add .
             git commit -m "npm run build"
-            git push origin HEAD:refs/remotes/pull/${{ github.event.pull_request.head.ref }}
+            git push origin HEAD:refs/heads/${{ github.event.pull_request.head.ref }}
             git log
           fi
