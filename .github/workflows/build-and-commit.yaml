@@ -52,5 +52,5 @@ jobs:
             git config user.email "google-cloud-build@zero65.in"
             git add .
             git commit -m "npm run build"
-            git push origin HEAD:${{ github.ref_name }}
+            git push origin HEAD:origin/${{ github.ref_name }}
           fi
