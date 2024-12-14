@@ -47,7 +47,6 @@ jobs:
           echo ${{ github.event.pull_request.head.ref }}
           echo ${{ github.ref_name }}
           git show-ref
-          "${git show-ref}"
           git remote -v
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "Zero65 Bot"
