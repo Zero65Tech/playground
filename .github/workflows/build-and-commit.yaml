@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
-          persist-credentials: true
+          # persist-credentials: true
       
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -29,7 +29,6 @@ jobs:
       - name: Set up Google Artifacts Registry Access
         run: | 
           if [ -n "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" ]; then
-            echo "Google Application Credentials found with Secrets"
             echo "@zero65:registry=https://asia-south1-npm.pkg.dev/zero65/npm/" > ~/.npmrc
             mkdir -p ~/.config/gcloud
             echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" | base64 --decode > ~/.config/gcloud/application_default_credentials.json
