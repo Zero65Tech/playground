@@ -1,8 +1,5 @@
 name: Build and Commit
 
-# permissions:
-  # contents: write
-
 on:
   workflow_call:
     secrets:
