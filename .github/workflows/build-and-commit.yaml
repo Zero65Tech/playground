@@ -29,28 +29,25 @@ jobs:
         run: | 
           if [ -n "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" ]; then
             echo "Google Application Credentials found with Secrets"
-            echo "@zero65:registry=https://asia-south1-npm.pkg.dev/zero65/npm/" > .npmrc
+            echo "@zero65:registry=https://asia-south1-npm.pkg.dev/zero65/npm/" > ~/.npmrc
             mkdir -p ~/.config/gcloud
-            echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" | base64 --decode > application_default_credentials.json
-            # npm install -g google-artifactregistry-auth
-            # npx google-artifactregistry-auth
+            echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" | base64 --decode > ~/.config/gcloud/application_default_credentials.json
+            npm install -g google-artifactregistry-auth
+            npx google-artifactregistry-auth
           fi
           
-      - name: Env
-        run: pwd && ls -al && ls -al ~
-
-      # - name: npm install
-      #   run: npm install
+      - name: npm ci
+        run: npm ci
       
-      # - name: npm run build
-      #   run: npm run build
+      - name: npm run build
+        run: npm run build
       
-      # - name: Commit and push fixes
-      #   run: |
-      #     git config user.name "github-actions[bot]"
-      #     git config user.email "github-actions[bot]@users.noreply.github.com"
-      #     if [ -n "$(git status --porcelain)" ]; then
-      #       git add .
-      #       git commit -m "fix: auto-fix ESLint issues"
-      #       git push origin HEAD:${{ github.event.pull_request.head.ref }}
-      #     fi
+      - name: Commit and push fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "fix: auto-fix ESLint issues"
+            git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          fi
