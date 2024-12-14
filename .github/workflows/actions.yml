@@ -15,3 +15,5 @@ jobs:
         run: env
   build:
     uses: ./.github/workflows/build.yaml
+    secrets:
+      MY_SECRET: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}

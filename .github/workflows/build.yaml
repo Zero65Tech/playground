@@ -5,6 +5,9 @@ permissions:
 
 on:
   workflow_call:
+    secrets:
+      GOOGLE_APPLICATION_CREDENTIALS_JSON:
+        required: true
 
 jobs:
   lint:
