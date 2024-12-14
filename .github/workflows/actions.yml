@@ -8,7 +8,7 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
-  build:
+  build-and-commit:
     uses: ./.github/workflows/build-and-commit.yaml
     secrets:
       GOOGLE_APPLICATION_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}
