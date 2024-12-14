@@ -36,6 +36,9 @@ jobs:
             # npx google-artifactregistry-auth
           fi
           
+      - name: Env
+        run: pwd && ls -al && ls -al ~
+
       # - name: npm install
       #   run: npm install
       
