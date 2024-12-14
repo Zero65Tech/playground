@@ -9,7 +9,7 @@
     "dev": "nodemon src/index.js",
     "test": "jest --coverage --testPathPattern=test/",
     "lint": "npx eslint . --ext .js,.json  --fix",
-    "build": "echo 'No build step defined'"
+    "build": "echo 'No build step defined' > build.txt"
   },
   "dependencies": {
     "@zero65/config": "2.2.x",
