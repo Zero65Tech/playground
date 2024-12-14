@@ -26,7 +26,7 @@ jobs:
       
       - name: Create .npmrc
         run: | 
-          if [ "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" ]; then
+          if [ -n "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" ]; then
             echo "Google Application Credentials found with Secrets"
             echo "@zero65:registry=https://asia-south1-npm.pkg.dev/zero65/npm/" > ~/.npmrc
             echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > ~/.config/gcloud/application_default_credentials.json
