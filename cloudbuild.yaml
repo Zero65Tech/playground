@@ -13,10 +13,10 @@ steps:
   args: [ 'install', '--omit=dev' ]
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/$PROJECT_ID/docker/playground:amf', '-f', 'Dockerfile', '.' ]
+  args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/$PROJECT_ID/docker/playground:COMMIT_SHA', '-f', 'Dockerfile', '.' ]
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'asia-south1-docker.pkg.dev/$PROJECT_ID/docker/playground:amf' ]
+  args: [ 'push', 'asia-south1-docker.pkg.dev/$PROJECT_ID/docker/playground:COMMIT_SHA' ]
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: [
