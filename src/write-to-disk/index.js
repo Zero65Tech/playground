@@ -17,5 +17,4 @@ exports.unzip = async () => {
       .on('close', resolve)
       .on('error', reject);
   });
-  return await exports.list();
 }
