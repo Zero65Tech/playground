@@ -12,8 +12,8 @@
     "build": "echo 'No build step defined' > build.txt"
   },
   "dependencies": {
-    "@zero65/config": "2.2.x",
     "@google-cloud/firestore": "7.11.x",
+    "@zero65/config": "2.2.x",
     "@zero65tech/date-string-ist": "4.0.x",
     "@zero65tech/file": "4.0.x",
     "@zero65tech/format": "4.0.x",
@@ -23,7 +23,8 @@
     "cors": "2.8.x",
     "express": "4.21.x",
     "joi": "17.13.x",
-    "lodash": "4.17.x"
+    "lodash": "4.17.x",
+    "unzipper": "^0.12.3"
   },
   "devDependencies": {
     "@zero65tech/eslint-config": "2.0.x",
@@ -37,6 +38,6 @@
   "nodemonConfig": {
     "verbose": false,
     "ignore": [],
-    "delay": "100"
+    "delay": "1000"
   }
 }

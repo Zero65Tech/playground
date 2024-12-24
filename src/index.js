@@ -1,12 +1,14 @@
 const express = require('express');
 const app     = express();
 
-const config = require('@zero65tech/config');
+const config = require('@zero65/config');
 
+(async () => {
+console.log(await require('./write-to-disk/').unzip());
+})();
 
-
-app.get('/', async (req, res) => {
-  res.send(config.message);
+app.get('/write-to-disk/list', async (req, res) => {
+  res.send(await require('./write-to-disk/').list());
 });
 
 app.get('/_env', async (req, res) => {
