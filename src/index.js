@@ -24,7 +24,7 @@ app.get('/write-to-disk/unzip', async (req, res) => {
 });
 
 app.get('/write-to-temp/unzip', async (req, res) => {
-  await writeToDisk.unzip();
+  await writeToTemp.unzip();
   res.send({ files: await writeToTemp.list(), memory: writeToTemp.getMemoryUsage() });
 });
 
