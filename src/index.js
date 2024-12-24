@@ -3,6 +3,8 @@ const app     = express();
 
 const config = require('@zero65/config');
 
+const writeToDisk = require('./write-to-disk/');
+
 // (async () => {
 // console.log(await require('./write-to-disk/').unzip());
 // })();
@@ -11,12 +13,13 @@ app.get('/_env', async (req, res) => {
   res.send(process.env);
 });
 
-app.get('/write-to-disk/list', async (req, res) => {
-  res.send(await require('./write-to-disk/').list());
+app.get('/write-to-disk/stats', (req, res) => {
+  res.send({ files:writeToDisk.list(), memory:writeToDisk.getMemoryUsage() });
 });
 
 app.get('/write-to-disk/unzip', async (req, res) => {
-  res.send(await require('./write-to-disk/').unzip());
+  await writeToDisk.unzip();
+  res.send({ files:writeToDisk.list(), memory:writeToDisk.getMemoryUsage() });
 });
 
 

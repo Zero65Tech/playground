@@ -4,10 +4,21 @@ const path = require('path');
 
 const unzipper = require('unzipper');
 
-exports.list = async () => {
-  const files = await fs.promises.readdir(__dirname);
+exports.list = () => {
+  const files = fs.readdirSync(__dirname);
   return files.map(file => path.join(__dirname, file));
 }
+
+exports.getMemoryUsage = () => {
+  const memoryUsage = process.memoryUsage();
+  return [
+    { label: 'RSS', value: (memoryUsage.rss / 1024 / 1024).toFixed(2) + ' MB' },
+    { label: 'Heap Total', value: (memoryUsage.heapTotal / 1024 / 1024).toFixed(2) + ' MB' },
+    { label: 'Heap Used', value: (memoryUsage.heapUsed / 1024 / 1024).toFixed(2) + ' MB' },
+    { label: 'External', value: (memoryUsage.external / 1024 / 1024).toFixed(2) + ' MB' },
+    { label: 'Array Buffers', value: (memoryUsage.arrayBuffers / 1024 / 1024).toFixed(2) + ' MB' },
+  ];
+};
 
 exports.unzip = async () => {
   const input = path.join(__dirname, 'data.csv.zip');
