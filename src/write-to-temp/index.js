@@ -4,10 +4,10 @@ const path = require('path');
 const unzipper = require('unzipper');
 
 exports.list = async () => {
-  const files = await fs.promises.readdir(__dirname);
+  const files = await fs.promises.readdir('/tmp');
   const fileDetails = {};
   for (const file of files) {
-    const filePath = path.join(__dirname, file);
+    const filePath = path.join('/tmp/', file);
     const stats = await fs.promises.lstat(filePath);
     if (!stats.isDirectory())
       fileDetails[file] = `${(stats.size / 1024 / 1024).toFixed(2)} MB`;
@@ -28,7 +28,7 @@ exports.getMemoryUsage = () => {
 
 exports.unzip = async () => {
   const input = path.join(__dirname, 'data.csv.zip');
-  const output = path.join(__dirname, `data-${ new Date().toISOString() }.csv`);
+  const output = path.join(`/tmp/data-${ new Date().toISOString() }.csv`);
   await new Promise((resolve, reject) => {
     fs.createReadStream(input).pipe(unzipper.ParseOne()).pipe(fs.createWriteStream(output))
       .on('close', resolve)
