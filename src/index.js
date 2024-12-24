@@ -13,13 +13,13 @@ app.get('/_env', async (req, res) => {
   res.send(process.env);
 });
 
-app.get('/write-to-disk/stats', (req, res) => {
-  res.send({ files:writeToDisk.list(), memory:writeToDisk.getMemoryUsage() });
+app.get('/write-to-disk/stats', async (req, res) => {
+  res.send({ files: await writeToDisk.list(), memory: writeToDisk.getMemoryUsage() });
 });
 
 app.get('/write-to-disk/unzip', async (req, res) => {
   await writeToDisk.unzip();
-  res.send({ files:writeToDisk.list(), memory:writeToDisk.getMemoryUsage() });
+  res.send({ files: await writeToDisk.list(), memory: writeToDisk.getMemoryUsage() });
 });
 
 

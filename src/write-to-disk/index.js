@@ -4,20 +4,27 @@ const path = require('path');
 
 const unzipper = require('unzipper');
 
-exports.list = () => {
-  const files = fs.readdirSync(__dirname);
-  return files.map(file => path.join(__dirname, file));
+exports.list = async () => {
+  const files = await fs.promises.readdir(__dirname);
+  const fileDetails = {};
+  for (const file of files) {
+    const filePath = path.join(__dirname, file);
+    const stats = await fs.promises.lstat(filePath);
+    if (!stats.isDirectory())
+      fileDetails[file] = `${(stats.size / 1024 / 1024).toFixed(2)} MB`;
+  }
+  return fileDetails;
 }
 
 exports.getMemoryUsage = () => {
   const memoryUsage = process.memoryUsage();
-  return [
-    { label: 'RSS', value: (memoryUsage.rss / 1024 / 1024).toFixed(2) + ' MB' },
-    { label: 'Heap Total', value: (memoryUsage.heapTotal / 1024 / 1024).toFixed(2) + ' MB' },
-    { label: 'Heap Used', value: (memoryUsage.heapUsed / 1024 / 1024).toFixed(2) + ' MB' },
-    { label: 'External', value: (memoryUsage.external / 1024 / 1024).toFixed(2) + ' MB' },
-    { label: 'Array Buffers', value: (memoryUsage.arrayBuffers / 1024 / 1024).toFixed(2) + ' MB' },
-  ];
+  return {
+    'RSS'           : (memoryUsage.rss / 1024 / 1024).toFixed(2) + ' MB',
+    'Heap Total'    : (memoryUsage.heapTotal / 1024 / 1024).toFixed(2) + ' MB',
+    'Heap Used'     : (memoryUsage.heapUsed / 1024 / 1024).toFixed(2) + ' MB',
+    'External'      : (memoryUsage.external / 1024 / 1024).toFixed(2) + ' MB',
+    'Array Buffers' : (memoryUsage.arrayBuffers / 1024 / 1024).toFixed(2) + ' MB',
+  };
 };
 
 exports.unzip = async () => {
