@@ -1,5 +1,14 @@
 steps:
 
+- name: 'gcr.io/cloud-builders/gcloud'
+  script: |
+    #!/usr/bin/env bash
+    gcloud artifacts print-settings npm --project=zero65 --repository=npm --location=asia-south1 --scope=@zero65 >> .npmrc
+
+- name: 'gcr.io/cloud-builders/npm'
+  entrypoint: 'npx'
+  args: [ 'google-artifactregistry-auth' ]
+  
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'install', '--omit=dev' ]
 
