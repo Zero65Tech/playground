@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "Absentee": {
+        "id": "1968997",
+        "account_id": "12315",
+        "user_id": "161445",
+        "startdate": "2022-05-31",
+        "enddate": "2022-06-01",
+        "exclude": false,
+        "roster_action": "none",
+        "absentee_option_id": "176770",
+        "note": "",
+        "created": "2022-05-06 14:44:49",
+        "updated": "2022-05-06 14:46:22",
+        "reviewed": null,
+        "status": "Pending",
+        "hours": "12.00",
+        "wait_hours": "0.00",
+        "wait_days": "0",
+        "partial_day": false,
+        "start_time": "00:00:00",
+        "end_time": "00:00:00",
+        "deleted": false,
+        "created_by": "161445",
+        "modified_by": "161445",
+        "reviewed_by": null,
+        "hide_days_without_hours": false,
+        "days": 2,
+        "hours_per_day": 6,
+        "total": 12,
+        "percentage": "100",
+        "surcharge_name": "100%",
+        "surcharge_total": 12,
+        "salary": 0,
+        "AbsenteeDay": {
+          "2022-05-31": {
+            "date": "2022-05-31",
+            "partial_day": false,
+            "start_time": "00:00:00",
+            "hours": "8.00000",
+            "wait_hours": "0.00000",
+            "wait_hours_balance_id": null,
+            "time_off_balance_id": "1eb030df-64dc-66f2-9bb7-ea6d31606bd9",
+            "salary": 0,
+            "coc": 0,
+            "department_id": "23708"
+          },
+          "2022-06-01": {
+            "date": "2022-06-01",
+            "partial_day": true,
+            "start_time": "09:00:00",
+            "hours": "4.00000",
+            "wait_hours": "0.00000",
+            "wait_hours_balance_id": null,
+            "time_off_balance_id": "1eb030df-64dc-66f2-9bb7-ea6d31606bd9",
+            "salary": 0,
+            "coc": 0,
+            "department_id": "23708"
+          }
+        },
+        "open_ended": false
+      },
+      "ReviewedBy": {
+        "first_name": "Quinty",
+        "prefix": "",
+        "last_name": "Ramautar",
+        "id": "703566",
+        "name": "Quinty Ramautar"
+      }
+    }
+  ],
+  "meta": {
+    "status": "ok",
+    "status_message": "",
+    "feedback": [],
+    "version": "e99d0786a",
+    "user_refreshed_at": "2022-05-06 13:52:55",
+    "self": "https://app.shiftbase.com/api/absentees?min_date=2022-01-01&max_date=2027-05-06"
+  }
+}
