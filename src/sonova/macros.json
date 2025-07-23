@@ -1802,55 +1802,6 @@
             "raw_title": "Email Templates::Backlog Customer Not Reached - October - New (Supervisor)"
         },
         {
-            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/15931669482001.json",
-            "id": 15931669482001,
-            "title": "Close Ticket - No Contact",
-            "active": true,
-            "updated_at": "2023-08-03T08:49:40Z",
-            "created_at": "2023-06-06T14:08:33Z",
-            "default": false,
-            "position": 58,
-            "description": "To be used if a customer does not want to be contacted again ",
-            "actions": [
-                {
-                    "field": "status",
-                    "value": "open"
-                },
-                {
-                    "field": "group_id",
-                    "value": "1900000526093"
-                },
-                {
-                    "field": "comment_value_html",
-                    "value": "<p>Closing. Not interested in our company service. See note above.&nbsp;</p><p><br></p>"
-                },
-                {
-                    "field": "assignee_id",
-                    "value": "8003666696209"
-                },
-                {
-                    "field": "comment_mode_is_public",
-                    "value": "false"
-                },
-                {
-                    "field": "custom_fields_1900001672873",
-                    "value": "55_not_interested_in_our_company_service"
-                },
-                {
-                    "field": "current_tags",
-                    "value": "notinterestedinourcompanyservice"
-                }
-            ],
-            "restriction": {
-                "type": "Group",
-                "id": 1900000526093,
-                "ids": [
-                    1900000526093
-                ]
-            },
-            "raw_title": "Close Ticket - No Contact"
-        },
-        {
             "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/27644660704017.json",
             "id": 27644660704017,
             "title": "Email Templates::Review Appointment Request",
@@ -1957,5 +1908,5 @@
     ],
     "next_page": null,
     "previous_page": null,
-    "count": 55
+    "count": 54
 }
