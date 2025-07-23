@@ -1,0 +1,1880 @@
+{
+    "triggers": [
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/25383095493394.json",
+            "id": 25383095493394,
+            "title": "uc100.001: Set COSI Linking ID for any ticket",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:04Z",
+            "created_at": "2025-03-17T12:18:55Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "notification_webhook",
+                    "value": [
+                        "01JCJD2EPDMKN225A5H21KTTPB",
+                        "{\"ticket\":{\"custom_fields\":[{\"id\":\"24993173568274\",\"value\":\"0{{ticket.id}}\"}]}}"
+                    ]
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 1,
+            "raw_title": "uc100.001: Set COSI Linking ID for any ticket",
+            "category_id": "25383110662802"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/25383110749458.json",
+            "id": 25383110749458,
+            "title": "uc100.002: Set organization to Sonova Marketing GmbH for all customers",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:04Z",
+            "created_at": "2025-03-17T12:18:55Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "notification_webhook",
+                    "value": [
+                        "01JBKJ0PRS21M3PFFMGPT1GHK9",
+                        "{\"user\":{\"organization_id\":20713400882194}}"
+                    ]
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "organization_id",
+                        "operator": "is_not",
+                        "value": "20713400882194"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ]
+            },
+            "description": null,
+            "position": 2,
+            "raw_title": "uc100.002: Set organization to Sonova Marketing GmbH for all customers",
+            "category_id": "25383110662802"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/25384386949778.json",
+            "id": 25384386949778,
+            "title": "uc100.003: Remove callback active tags when ticket is Solved",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:04Z",
+            "created_at": "2025-03-17T13:01:05Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "remove_tags",
+                    "value": "unscheduled_callback_active"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "scheduled_callback_active"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "custom_fields_20974997484818",
+                        "operator": "present",
+                        "value": ""
+                    },
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "solved"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "unscheduled_callback_active"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "scheduled_callback_active"
+                    }
+                ]
+            },
+            "description": "uc100.003: Remove callback active tags when ticket is Solved",
+            "position": 3,
+            "raw_title": "uc100.003: Remove callback active tags when ticket is Solved",
+            "category_id": "25383110662802"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22903736096530.json",
+            "id": 22903736096530,
+            "title": "uc101.003: Perform updates after 2nd call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:05Z",
+            "created_at": "2024-11-27T11:52:50Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "2"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_2"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "ca_1 ca_increase phonecall_attempted_event_sent"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "2"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_1"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 1,
+            "raw_title": "uc101.003: Perform updates after 2nd call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22899129958034.json",
+            "id": 22899129958034,
+            "title": "uc101.001: Set default values for incoming new lead form tickets",
+            "active": true,
+            "updated_at": "2025-07-07T12:22:54Z",
+            "created_at": "2024-11-27T09:24:22Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "0"
+                },
+                {
+                    "field": "custom_fields_24139121705746",
+                    "value": "lead_ticket"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "inbound ch_web ca_0"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "0"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "lead_ticket"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "not_includes",
+                        "value": "winback_ticket"
+                    },
+                    {
+                        "field": "via_id",
+                        "operator": "is",
+                        "value": "5"
+                    }
+                ],
+                "any": []
+            },
+            "description": "uc101.001: Set default values for incoming new lead form tickets",
+            "position": 2,
+            "raw_title": "uc101.001: Set default values for incoming new lead form tickets",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22903709115666.json",
+            "id": 22903709115666,
+            "title": "uc101.009: Perform updates after 8th call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:06Z",
+            "created_at": "2024-11-27T11:52:50Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "8"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_8"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "ca_7 ca_increase phonecall_attempted_event_sent"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "8"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_7"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 3,
+            "raw_title": "uc101.009: Perform updates after 8th call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22903736096658.json",
+            "id": 22903736096658,
+            "title": "uc101.008: Perform updates after 7th call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:06Z",
+            "created_at": "2024-11-27T11:52:50Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "7"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "7"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "ca_6 ca_increase phonecall_attempted_event_sent"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_7"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_6"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 4,
+            "raw_title": "uc101.008: Perform updates after 7th call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22903724143762.json",
+            "id": 22903724143762,
+            "title": "uc101.006: Perform updates after 5th call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:05Z",
+            "created_at": "2024-11-27T11:52:50Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "remove_tags",
+                    "value": "ca_4 ca_increase phonecall_attempted_event_sent"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "5"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_5"
+                },
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "5"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_4"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 5,
+            "raw_title": "uc101.006: Perform updates after 5th call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22903715200914.json",
+            "id": 22903715200914,
+            "title": "uc101.002: Perform updates after 1st call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:05Z",
+            "created_at": "2024-11-27T11:52:50Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "1"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_1"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "ca_0 ca_increase phonecall_attempted_event_sent"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "1"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_0"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 6,
+            "raw_title": "uc101.002: Perform updates after 1st call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22903724130066.json",
+            "id": 22903724130066,
+            "title": "uc101.005: Perform updates after 4th call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:05Z",
+            "created_at": "2024-11-27T11:52:50Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "remove_tags",
+                    "value": "ca_3 ca_increase phonecall_attempted_event_sent"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "4"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_4"
+                },
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "4"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_3"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 7,
+            "raw_title": "uc101.005: Perform updates after 4th call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22903736095250.json",
+            "id": 22903736095250,
+            "title": "uc101.011: Solving the ticket after the last call attempt was unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:06Z",
+            "created_at": "2024-11-27T11:52:50Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "remove_tags",
+                    "value": "unscheduled_callback_active"
+                },
+                {
+                    "field": "custom_fields_20974997484818",
+                    "value": "appointment_not_possible_not_reached"
+                },
+                {
+                    "field": "reply_internal",
+                    "value": "<p>Maximale Anzahl an Wiedervorlagen erreicht. Ticket wird gelöst.</p>"
+                },
+                {
+                    "field": "status",
+                    "value": "solved"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "max_call_attempts_reached"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": "UC101: This trigger will automatically solve the tickets when maximum call attempt is reached",
+            "position": 8,
+            "raw_title": "uc101.011: Solving the ticket after the last call attempt was unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/24221753740946.json",
+            "id": 24221753740946,
+            "title": "uc101.007: Perform updates after 6th call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:06Z",
+            "created_at": "2025-01-27T12:14:59Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "6"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_6"
+                },
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "6"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "ca_5 ca_increase phonecall_attempted_event_sent"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_5"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 9,
+            "raw_title": "uc101.007: Perform updates after 6th call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/24221692913682.json",
+            "id": 24221692913682,
+            "title": "uc101.004: Perform updates after 3rd call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:05Z",
+            "created_at": "2025-01-27T12:14:59Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "3"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_3"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "3"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "ca_2 ca_increase phonecall_attempted_event_sent"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_2"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 10,
+            "raw_title": "uc101.004: Perform updates after 3rd call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/22903700640914.json",
+            "id": 22903700640914,
+            "title": "uc101.010: Perform updates after 9th call attempt is unsuccessful",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:05Z",
+            "created_at": "2024-11-27T11:52:50Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "remove_tags",
+                    "value": "ca_8 ca_increase phonecall_attempted_event_sent"
+                },
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "9"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_9"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "9"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_8"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_increase"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 11,
+            "raw_title": "uc101.010: Perform updates after 9th call attempt is unsuccessful",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210227676306.json",
+            "id": 27210227676306,
+            "title": "uc101.012: Re-solving solved ticket with appointment later than 28 days",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:27Z",
+            "created_at": "2025-06-05T15:00:27Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "current_tags",
+                    "value": "set_as_solved_again"
+                },
+                {
+                    "field": "status",
+                    "value": "solved"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "custom_fields_24139121705746",
+                        "operator": "is",
+                        "value": "lead_ticket"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "tobeset_as_solved_again"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": "UC101: This trigger will re-solve tickets that have appointments in more than 28 days from the date when appointment was confirmed so that Zendesk does not close these tickets automatically in 4 weeks",
+            "position": 12,
+            "raw_title": "uc101.012: Re-solving solved ticket with appointment later than 28 days",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27526912029970.json",
+            "id": 27526912029970,
+            "title": "uc101.013: Auto solving unqualified leads",
+            "active": true,
+            "updated_at": "2025-06-20T08:18:24Z",
+            "created_at": "2025-06-20T08:14:54Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "reply_internal",
+                    "value": "Ticket gelöst mit dem Kontaktergebnis 'Sonstiges' aufgrund eines nicht qualifizierten Lead"
+                },
+                {
+                    "field": "custom_fields_20974997484818",
+                    "value": "other"
+                },
+                {
+                    "field": "status",
+                    "value": "solved"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "custom_fields_27511166680082",
+                        "operator": "is",
+                        "value": "qual_0"
+                    }
+                ],
+                "any": []
+            },
+            "description": "UC101: This trigger will auto solve unqualified leads based on the qualification flag from lead forms",
+            "position": 13,
+            "raw_title": "uc101.013: Auto solving unqualified leads",
+            "category_id": "21181438250642"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210194845458.json",
+            "id": 27210194845458,
+            "title": "uc102.002: Open missed call tickets",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:25Z",
+            "created_at": "2025-06-05T15:00:25Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "open"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is_not",
+                        "value": "new"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "current_via_id",
+                        "operator": "is",
+                        "value": "44"
+                    },
+                    {
+                        "field": "current_via_id",
+                        "operator": "is",
+                        "value": "45"
+                    }
+                ]
+            },
+            "description": null,
+            "position": 1,
+            "raw_title": "uc102.002: Open missed call tickets",
+            "category_id": "21181451650578"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210253669138.json",
+            "id": 27210253669138,
+            "title": "uc102.001: Set default values for incoming new phone tickets",
+            "active": true,
+            "updated_at": "2025-07-07T12:22:54Z",
+            "created_at": "2025-06-05T15:00:27Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "0"
+                },
+                {
+                    "field": "custom_fields_24139121705746",
+                    "value": "lead_ticket"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "0"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ch_phone ca_0"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "aircall"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "via_id",
+                        "operator": "is",
+                        "value": "46"
+                    },
+                    {
+                        "field": "via_id",
+                        "operator": "is",
+                        "value": "44"
+                    },
+                    {
+                        "field": "via_id",
+                        "operator": "is",
+                        "value": "45"
+                    }
+                ]
+            },
+            "description": null,
+            "position": 2,
+            "raw_title": "uc102.001: Set default values for incoming new phone tickets",
+            "category_id": "21181451650578"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210203082002.json",
+            "id": 27210203082002,
+            "title": "uc103.002: Send Email to the Customer via Public comment",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:25Z",
+            "created_at": "2025-06-05T15:00:25Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "notification_user",
+                    "value": [
+                        "requester_and_ccs",
+                        "Ihre Anfrage bei GEERS",
+                        "{{ticket.latest_public_comment_html}}\n\nIhre Anfrage wurde unter der Bearbeitungsnummer {{ticket.id}} gespeichert. Bei eventuellen Rückfragen antworten Sie bitte einfach auf diese E-Mail."
+                    ]
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "role",
+                        "operator": "is",
+                        "value": "agent"
+                    },
+                    {
+                        "field": "comment_is_public",
+                        "operator": "is",
+                        "value": "requester_can_see_comment"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": "It will send an email to the Customer when an Agent select Public comment on the ticket",
+            "position": 1,
+            "raw_title": "uc103.002: Send Email to the Customer via Public comment",
+            "category_id": "21181454555538"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210194842258.json",
+            "id": 27210194842258,
+            "title": "uc103.003: Open email tickets",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:25Z",
+            "created_at": "2025-06-05T15:00:25Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "open"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "current_via_id",
+                        "operator": "is",
+                        "value": "4"
+                    },
+                    {
+                        "field": "status",
+                        "operator": "is_not",
+                        "value": "new"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 1,
+            "raw_title": "uc103.003: Open email tickets",
+            "category_id": "21181454555538"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210211255954.json",
+            "id": 27210211255954,
+            "title": "uc103.001: Set default values for incoming new email tickets",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:27Z",
+            "created_at": "2025-06-05T15:00:27Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "0"
+                },
+                {
+                    "field": "custom_fields_24139121705746",
+                    "value": "lead_ticket"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "0"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "inbound ch_email ca_0"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "via_id",
+                        "operator": "is",
+                        "value": "4"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 2,
+            "raw_title": "uc103.001: Set default values for incoming new email tickets",
+            "category_id": "21181454555538"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210227823378.json",
+            "id": 27210227823378,
+            "title": "uc105.001: Set default values for incoming new eBooking tickets",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:27Z",
+            "created_at": "2025-06-05T15:00:27Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "0"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "inbound ch_web ca_0"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "0"
+                },
+                {
+                    "field": "custom_fields_24139121705746",
+                    "value": "ebooking_ticket"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ebooking_ticket"
+                    },
+                    {
+                        "field": "via_id",
+                        "operator": "is",
+                        "value": "5"
+                    }
+                ],
+                "any": []
+            },
+            "description": "UC105: Set default values for incoming new eBooking tickets",
+            "position": 1,
+            "raw_title": "uc105.001: Set default values for incoming new eBooking tickets",
+            "category_id": "21181479616530"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210215055250.json",
+            "id": 27210215055250,
+            "title": "uc122.001: Set the priority of all missed call tickets to high",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:25Z",
+            "created_at": "2025-06-05T15:00:25Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "priority",
+                    "value": "high"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "inbound"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "unanswered_call"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ch_phone"
+                    }
+                ],
+                "any": []
+            },
+            "description": "Set the priority of missed call tickets to high",
+            "position": 1,
+            "raw_title": "uc122.001: Set the priority of all missed call tickets to high",
+            "category_id": "22855403927186"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210203076626.json",
+            "id": 27210203076626,
+            "title": "uc122.002: Set the priority of all inbound email tickets to high",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:25Z",
+            "created_at": "2025-06-05T15:00:25Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "priority",
+                    "value": "high"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "inbound"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ch_email"
+                    }
+                ],
+                "any": []
+            },
+            "description": "Set the priority of all inbound email tickets to high",
+            "position": 1,
+            "raw_title": "uc122.002: Set the priority of all inbound email tickets to high",
+            "category_id": "22855403927186"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210215325714.json",
+            "id": 27210215325714,
+            "title": "uc122.003: Set the priority of high scoring lead tickets to high",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:27Z",
+            "created_at": "2025-06-05T15:00:27Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "priority",
+                    "value": "high"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "custom_fields_20974997458450",
+                        "operator": "is",
+                        "value": "cp_h"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ch_web"
+                    }
+                ],
+                "any": []
+            },
+            "description": "Set the priority of high scoring lead tickets to high",
+            "position": 2,
+            "raw_title": "uc122.003: Set the priority of high scoring lead tickets to high",
+            "category_id": "22855403927186"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210245416466.json",
+            "id": 27210245416466,
+            "title": "uc122.004: Set the priority of medium scoring leads and all callback and all ebooking tickets to normal",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:27Z",
+            "created_at": "2025-06-05T15:00:27Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "priority",
+                    "value": "normal"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ebooking_ticket"
+                    },
+                    {
+                        "field": "custom_fields_20974997458450",
+                        "operator": "is",
+                        "value": "cp_m"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "scheduled_callback_active"
+                    }
+                ]
+            },
+            "description": "Set the priority of medium scoring leads and all callback and all ebooking tickets to normal",
+            "position": 2,
+            "raw_title": "uc122.004: Set the priority of medium scoring leads and all callback and all ebooking tickets to normal",
+            "category_id": "22855403927186"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210253653906.json",
+            "id": 27210253653906,
+            "title": "uc122.005: Set the priority of low scoring leads and reminder tickets to low",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:27Z",
+            "created_at": "2025-06-05T15:00:27Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "priority",
+                    "value": "low"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "custom_fields_20974997458450",
+                        "operator": "is",
+                        "value": "cp_l"
+                    },
+                    {
+                        "field": "custom_fields_24139121705746",
+                        "operator": "is",
+                        "value": "reminder_ticket"
+                    }
+                ]
+            },
+            "description": "Set the priority of low scoring leads and reminder tickets to low",
+            "position": 2,
+            "raw_title": "uc122.005: Set the priority of low scoring leads and reminder tickets to low",
+            "category_id": "22855403927186"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/26685256910866.json",
+            "id": 26685256910866,
+            "title": "uc201.001: Auto solve reminder tickets when appointment date is within next 3 days",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:05Z",
+            "created_at": "2025-05-13T15:24:12Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_20974997484818",
+                    "value": "reminder_solved_automatically"
+                },
+                {
+                    "field": "reply_internal",
+                    "value": "Ticket gelöst mit Kontaktergebnis Reminder::Automatisch gelöst (Termin ist in weniger als 4 Tagen)"
+                },
+                {
+                    "field": "status",
+                    "value": "solved"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "custom_fields_24139121705746",
+                        "operator": "is",
+                        "value": "reminder_ticket"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "custom_fields_20975013788690",
+                        "operator": "within_previous_n_days",
+                        "value": "1"
+                    },
+                    {
+                        "field": "custom_fields_20975013788690",
+                        "operator": "within_next_n_days",
+                        "value": "3"
+                    }
+                ]
+            },
+            "description": "uc201.001: Auto solve reminder tickets when appointment date is within next 3 days",
+            "position": 1,
+            "raw_title": "uc201.001: Auto solve reminder tickets when appointment date is within next 3 days",
+            "category_id": "21181479616914"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/26684135838482.json",
+            "id": 26684135838482,
+            "title": "uc203.001: Solve No show ticket after 2 unsuccessful call attempts",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:04Z",
+            "created_at": "2025-05-13T14:45:02Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "current_tags",
+                    "value": "max_call_attempts_reached_no_show"
+                },
+                {
+                    "field": "reply_internal",
+                    "value": "Maximale Anzahl an Anrufversuchen für No show erreicht"
+                },
+                {
+                    "field": "custom_fields_20974997484818",
+                    "value": "no_show_not_reached"
+                },
+                {
+                    "field": "status",
+                    "value": "solved"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "pending"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "ca_2"
+                    },
+                    {
+                        "field": "custom_fields_24139121705746",
+                        "operator": "is",
+                        "value": "no_show_ticket"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": "UC203: This trigger will automatically solve the No show tickets when maximum call attempt is reached (2 call attempts)",
+            "position": 1,
+            "raw_title": "uc203.001: Solve No show ticket after 2 unsuccessful call attempts",
+            "category_id": "21181438211474"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210227882130.json",
+            "id": 27210227882130,
+            "title": "uc203.002: Initialise Beyond No-Show tickets",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:28Z",
+            "created_at": "2025-06-05T15:00:28Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "0"
+                },
+                {
+                    "field": "custom_fields_24139121705746",
+                    "value": "no_show_ticket"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ca_0"
+                },
+                {
+                    "field": "custom_fields_22199055651218",
+                    "value": "beyond"
+                },
+                {
+                    "field": "ticket_form_id",
+                    "value": "26839923008402"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "no_show_beyond"
+                    }
+                ],
+                "any": []
+            },
+            "description": "uc203.002: This trigger will automatically initialise Beyond No-Show tickets when created",
+            "position": 2,
+            "raw_title": "uc203.002: Initialise Beyond No-Show tickets",
+            "category_id": "21181438211474"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210215516562.json",
+            "id": 27210215516562,
+            "title": "uc302.001: Notify anonymization service",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:29Z",
+            "created_at": "2025-06-05T15:00:29Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "notification_webhook",
+                    "value": [
+                        "01JBEK2HNN90S85ZQSPTRB2PY0",
+                        "{\"email\":\"{{ticket.requester.email}}\",\"environment\":\"development\",\"phone\":\"{{ticket.requester.phone}}\",\"ticketId\":\"{{ticket.id}}\",\"uuid\":\"{{ticket.requester.external_id}}\"}"
+                    ]
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "anonymise_service_send"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "anonymise_service_sent"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "custom_fields_20974997484818",
+                        "operator": "is",
+                        "value": "complaint_data_protection_deletion_of_all_data"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "anonymise_service_send"
+                    },
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "solved"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": "This trigger uses a webhook to send a request to GCP anonymization service (cloud function)",
+            "position": 1,
+            "raw_title": "uc302.001: Notify anonymization service",
+            "category_id": "21181479644818"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210215514386.json",
+            "id": 27210215514386,
+            "title": "uc302.002: Send data privacy email to Geers via a side conversation",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:29Z",
+            "created_at": "2025-06-05T15:00:29Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "current_tags",
+                    "value": "data_privacy_to_geers_sent"
+                },
+                {
+                    "field": "notification_webhook",
+                    "value": [
+                        "01JBEKE06N91ANWC0K6EP4M63F",
+                        "{\n  \"message\" : {\n    \"subject\" : \"FW: {{ticket.title}}\",\n    \"body\" : \"{% if ticket.tags contains 'anonymise_service_send' or ticket.tags contains 'anonymise_service_sent' %}\nDatenschutzanfrage: Löschung aller Daten - siehe unten\n{% else %}\nDatenschutzanfrage: Werbewiederspruch (Optout) - siehe unten\n{% endif %}\nBitte privaten Kommentar hinzufügen, wenn die Anfrage bearbeitet wurde\n{% if ticket.tags contains 'ch_email' %}\n{{ticket.description}}\n{% endif %}\n\nKunden Name: {{ticket.requester.name}}\nKunden Email: {{ticket.requester.email}}\nKunden Phone: {{ticket.requester.phone}}\n\nTicket Link: {{ticket.link}}\n\",\n    \"to\" : [{ \"email\" : \"support@sonova.zendesk.com\" }]\n  }\n}\n"
+                    ]
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "data_privacy_to_geers_send"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "data_privacy_to_geers_send"
+                    },
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "solved"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "custom_fields_20974997484818",
+                        "operator": "is",
+                        "value": "complaint_data_protection_deletion_of_all_data"
+                    },
+                    {
+                        "field": "custom_fields_20974997484818",
+                        "operator": "is",
+                        "value": "complaint_data_protection_optout"
+                    }
+                ]
+            },
+            "description": "This trigger uses a webhook to add a side conversation to the ticket to send a data privacy email to Geers",
+            "position": 1,
+            "raw_title": "uc302.002: Send data privacy email to Geers via a side conversation",
+            "category_id": "21181479644818"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210227960722.json",
+            "id": 27210227960722,
+            "title": "uc302.003: Send certain requests to Geers via a side conversation",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:29Z",
+            "created_at": "2025-06-05T15:00:29Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "remove_tags",
+                    "value": "other_requests_to_geers_send"
+                },
+                {
+                    "field": "notification_webhook",
+                    "value": [
+                        "01JBEKE06N91ANWC0K6EP4M63F",
+                        "{\n  \"message\" : {\n    \"subject\" : \"FW: {{ticket.title}}\",\n    \"body\" : \"Bitte die folgende Anfrage bearbeiten \n{% if ticket.tags contains \"ch_email\" %}\n{{ticket.description}}\n{% endif %}\n\nKunden Name: {{ticket.requester.name}}\nKunden Email: {{ticket.requester.email}}\nKunden Phone: {{ticket.requester.phone}}\n\nTicket Link: {{ticket.link}}\n\",\n    \"to\" : [{ \"email\" : \"support@sonova.zendesk.com\" }]\n  }\n}\n"
+                    ]
+                },
+                {
+                    "field": "current_tags",
+                    "value": "other_requests_to_geers_sent"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "other_requests_to_geers_send"
+                    },
+                    {
+                        "field": "status",
+                        "operator": "is",
+                        "value": "solved"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "custom_fields_20974997484818",
+                        "operator": "is",
+                        "value": "other_geers_related"
+                    }
+                ]
+            },
+            "description": "This trigger uses a webhook to add a side conversation to the ticket to send an other requests email to Geers",
+            "position": 1,
+            "raw_title": "uc302.003: Send certain requests to Geers via a side conversation",
+            "category_id": "21181479644818"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210211144082.json",
+            "id": 27210211144082,
+            "title": "uc304.001: Set default values for a new manually created ticket",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:26Z",
+            "created_at": "2025-06-05T15:00:26Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "priority",
+                    "value": "normal"
+                },
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "0"
+                },
+                {
+                    "field": "custom_fields_24139121705746",
+                    "value": "lead_ticket"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "ch_web ca_0 manually_created_ticket"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "0"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "via_id",
+                        "operator": "is",
+                        "value": "0"
+                    },
+                    {
+                        "field": "via_id",
+                        "operator": "is",
+                        "value": "27"
+                    }
+                ]
+            },
+            "description": null,
+            "position": 1,
+            "raw_title": "uc304.001: Set default values for a new manually created ticket",
+            "category_id": "25407340137618"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27337461669266.json",
+            "id": 27337461669266,
+            "title": "uc304.002: Set default values for WinBack tickets",
+            "active": true,
+            "updated_at": "2025-06-11T15:27:33Z",
+            "created_at": "2025-06-11T15:27:33Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "priority",
+                    "value": "normal"
+                },
+                {
+                    "field": "custom_fields_22250279774610",
+                    "value": "0"
+                },
+                {
+                    "field": "custom_fields_24139121705746",
+                    "value": "lead_ticket"
+                },
+                {
+                    "field": "custom_fields_21707898954258",
+                    "value": "0"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "outbound ch_web ca_0"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "winback_ticket"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 2,
+            "raw_title": "uc304.002: Set default values for WinBack tickets",
+            "category_id": "25407340137618"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/27210215288978.json",
+            "id": 27210215288978,
+            "title": "uc901.001: Solve all test tickets immediately",
+            "active": true,
+            "updated_at": "2025-06-05T15:00:27Z",
+            "created_at": "2025-06-05T15:00:27Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "custom_fields_20974997484818",
+                    "value": "other_test"
+                },
+                {
+                    "field": "custom_fields_24139121705746",
+                    "value": "test_ticket"
+                },
+                {
+                    "field": "status",
+                    "value": "solved"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "test_ticket"
+                    }
+                ],
+                "any": []
+            },
+            "description": null,
+            "position": 1,
+            "raw_title": "uc901.001: Solve all test tickets immediately",
+            "category_id": "21181451588114"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/24221384010386.json",
+            "id": 24221384010386,
+            "title": "uc903.001: Send Ticket Information to Data Warehouse Endpoint",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:05Z",
+            "created_at": "2025-01-27T12:08:01Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "notification_webhook",
+                    "value": [
+                        "01J85B66JJDXB3QRRGD3K1STR5",
+                        "{% for comment in ticket.comments limit:1 offset:0 %}\n{\n        \"created_at\" : \"{{ticket.created_at_with_timestamp}}\",\n        \"updated_at\" : \"{{ticket.updated_at_with_timestamp}}\",\n        \"zendesk_ticket_id\" : \"{{ticket.id}}\",\n        \"ticket_status\" : \"{{ticket.status}}\",\n        \"ticket_tags\" : \"{{ticket.tags}}\",\n        \"description\" : \"{{ticket.description}}\",\n        \"last_comment\" : {\n            \"id\" : \"{{ comment.id }}\",\n            \"created_at\" : \"{{ comment.created_at }}\",\n            \"value\" : \"{{ comment.value }}\"\n        },\n        \"call_attempt\" : \"{{ticket.ticket_field_21707898954258}}\",\n        \"noveo_id\" : \"{{ticket.requester.custom_fields.noveo_id}}\",\n        \"appointment_date\" : \"{{ticket.ticket_field_20975013788690}}\",\n        \"appointment_time\" : \"{{ticket.ticket_field_20975076775570}}\",\n        \"appointment_type\" : \"{{ticket.ticket_field_20975043205522}}\",\n        \"shop_number\" : \"{{ticket.ticket_field_21974593531154}}\",\n        \"accessibility\" : \"\",\n        \"phone_number\" : \"{{ticket.requester.phone}}\",\n        \"email_address\" : \"{{ticket.requester.email}}\",\n        \"postal_code\" : \"{{ticket.requester.custom_fields.customer_postalcode}}\",\n        \"current_user\" : {\n          \"name\" : \"{{current_user.name}}\",\n          \"email\" : \"{{current_user.email}}\",\n          \"id\" : \"{{current_user.id}}\"\n        },\n        \"assignee\" : {\n          \"name\" : \"{{ticket.assignee.name}}\",\n          \"email\" : \"{{ticket.assignee.email}}\",\n          \"id\" : \"{{ticket.assignee.id}}\"\n        },\n        \"lead_id\" : \"{{ticket.ticket_field_20975043202962}}\",\n        \"contact_result\" : \"{{ticket.ticket_field_20974997484818}}\",\n        \"consent_info_package\" : \"\",\n        \"cosi_summary\" : \"{{ticket.ticket_field_20975060928402}}\",\n        \"lead_probability_score\" : \"{{ticket.ticket_field_20975013786642}}\",\n        \"callback_date\" : \"{{ticket.ticket_field_20975043203218}}\",\n        \"callback_time\" : \"{{ticket.ticket_field_20975013788818}}\",\n        \"reason_for_no_show\" : \"{{ticket.ticket_field_21545659487762}}\"\n}\n{% endfor %}\n"
+                    ]
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "current_tags",
+                        "operator": "not_includes",
+                        "value": "test_ticket"
+                    }
+                ],
+                "any": [
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Create"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ]
+            },
+            "description": "This trigger notifies a webhook to update Data Warehouse Endpoint on every ticket creation or update",
+            "position": 1,
+            "raw_title": "uc903.001: Send Ticket Information to Data Warehouse Endpoint",
+            "category_id": "20724344261138"
+        },
+        {
+            "url": "https://geershelpdesk1723477261.zendesk.com/api/v2/triggers/25455172461458.json",
+            "id": 25455172461458,
+            "title": "uc905.001: Close test tickets",
+            "active": true,
+            "updated_at": "2025-05-28T03:35:04Z",
+            "created_at": "2025-03-20T08:01:03Z",
+            "default": false,
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "closed"
+                },
+                {
+                    "field": "custom_fields_20974997484818",
+                    "value": "other_test"
+                }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "field": "current_tags",
+                        "operator": "includes",
+                        "value": "close_ticket_immediately"
+                    },
+                    {
+                        "field": "update_type",
+                        "operator": "is",
+                        "value": "Change"
+                    }
+                ],
+                "any": []
+            },
+            "description": "UC905: Close test tickets",
+            "position": 1,
+            "raw_title": "uc905.001: Close test tickets",
+            "category_id": "21181462965010"
+        }
+    ],
+    "next_page": null,
+    "previous_page": null,
+    "count": 38
+}

@@ -1,0 +1,1961 @@
+{
+    "macros": [
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/1900007065773.json",
+            "id": 1900007065773,
+            "title": "Call-Back (Retry Later)",
+            "active": true,
+            "updated_at": "2023-09-06T15:32:56Z",
+            "created_at": "2021-08-27T08:38:09Z",
+            "default": false,
+            "position": 1,
+            "description": "If customer not reached, pushed the ticket into waiting line until the next call attempt",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "pending"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "automated_callback"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Customer not reached</p><p><br></p><p>{{ticket.ticket_field_option_title_360026254777}} call attempt<br></p><p><br></p>"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "scheduled_callback"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": ""
+                },
+                {
+                    "field": "current_tags",
+                    "value": "call_attempt_increase"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Call-Back (Retry Later)"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10168320916881.json",
+            "id": 10168320916881,
+            "title": "Reminder and No-Show Callback",
+            "active": true,
+            "updated_at": "2023-03-23T08:50:00Z",
+            "created_at": "2022-10-27T09:54:42Z",
+            "default": false,
+            "position": 2,
+            "description": "If customer not reached, pushed the ticket into waiting line until the next call attempt",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "pending"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "automated_callback"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Customer not reached</p><p><br></p><p>{{ticket.ticket_field_option_title_360026254777}} call attempt<br></p><p><br></p>"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "scheduled_callback"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Reminder and No-Show Callback"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/360106254878.json",
+            "id": 360106254878,
+            "title": "Call-Back (Scheduled)",
+            "active": true,
+            "updated_at": "2024-09-11T10:37:52Z",
+            "created_at": "2021-08-29T15:57:49Z",
+            "default": false,
+            "position": 3,
+            "description": "Pushes the lead into the waiting line until it's time for the scheduled call-back",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "pending"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "scheduled_callback"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Scheduled call-back on {{ticket.ticket_field_360026221897}} at {{ticket.ticket_field_1900001672713}}</p><p><br></p>"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "automated_callback"
+                },
+                {
+                    "field": "group_id",
+                    "value": "1900000526053"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Call-Back (Scheduled)"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10285946506897.json",
+            "id": 10285946506897,
+            "title": "Reminder Calls::Reminder Call - Appointment Confirmation",
+            "active": true,
+            "updated_at": "2023-08-03T08:42:49Z",
+            "created_at": "2022-11-01T15:22:55Z",
+            "default": false,
+            "position": 7,
+            "description": "To use when you have spoken to a customer and confirmed their appointment with them/their relative",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "23_appointment_confirmed"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Appointment confirmed with CX</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Reminder Calls::Reminder Call - Appointment Confirmation"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/17495361869969.json",
+            "id": 17495361869969,
+            "title": "Reminder Calls::Reminder Call - Appointment Cancelled",
+            "active": true,
+            "updated_at": "2023-08-03T08:42:57Z",
+            "created_at": "2023-08-03T08:37:24Z",
+            "default": false,
+            "position": 8,
+            "description": "To use when you have spoken to a customer and they wish to cancel their appointment. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "24_appointment_cancelled"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Appointment cancelled. Cancellation information on main ticket.&nbsp;</p>"
+                },
+                {
+                    "field": "custom_fields_1900001704193",
+                    "value": "cancellation"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Reminder Calls::Reminder Call - Appointment Cancelled"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/17495508235537.json",
+            "id": 17495508235537,
+            "title": "Reminder Calls::Reminder Call - Appointment Rescheduled",
+            "active": true,
+            "updated_at": "2023-08-03T08:43:04Z",
+            "created_at": "2023-08-03T08:42:13Z",
+            "default": false,
+            "position": 9,
+            "description": "To use when you have spoken to a customer to remind them of their appointment and they wish to reschedule that appointment.",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "22_appointment_rescheduled"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Appointment rescheduled. Reschedule information on the main ticket.&nbsp;</p>"
+                },
+                {
+                    "field": "custom_fields_1900001704193",
+                    "value": "reschedule"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Reminder Calls::Reminder Call - Appointment Rescheduled"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/17495467587857.json",
+            "id": 17495467587857,
+            "title": "Reminder Calls::Reminder Call - Not Needed",
+            "active": true,
+            "updated_at": "2023-08-03T08:43:12Z",
+            "created_at": "2023-08-03T08:41:07Z",
+            "default": false,
+            "position": 10,
+            "description": "To use when you do not need to do a reminder call because they have already confirmed their apponitment in the last couple of days or you have booked them in in the last couple of days ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "23_appointment_confirmed"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Appointment confirmed already. Reminder call not needed.</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Reminder Calls::Reminder Call - Not Needed"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/14241901932177.json",
+            "id": 14241901932177,
+            "title": "No-Show Call - Call Not Needed - Solve",
+            "active": true,
+            "updated_at": "2023-04-03T07:38:47Z",
+            "created_at": "2023-04-03T07:38:47Z",
+            "default": false,
+            "position": 11,
+            "description": "To use when you do not believe a no-show follow-up call needs to take place",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "63_no_show_call_not_needed"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>No Show Call Not Needed</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "No-Show Call - Call Not Needed - Solve"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/6495843717137.json",
+            "id": 6495843717137,
+            "title": "Internal Notes From Call",
+            "active": true,
+            "updated_at": "2022-11-28T11:41:15Z",
+            "created_at": "2022-05-31T09:28:33Z",
+            "default": false,
+            "position": 12,
+            "description": null,
+            "actions": [
+                {
+                    "field": "comment_value_html",
+                    "value": "<p><b>People with no HA's</b></p><p>#Tested/diagnosed before?<br>#<b>(If yes)</b>Were you suggested hearing aids at the time?</p><p>#Length of difficulty?</p><p>#Most struggle when?&nbsp;<br></p><p>#More in left or right?</p><p>#Tinnitus?&nbsp;<br></p><p><b><br></b></p><p><b>People with HA'?</b></p><p>#What company are your HA's with?</p><p>#Any issues with current HA?</p><p>#Most struggle when?&nbsp;&nbsp;</p><p>#What's most important to you in a HA?<br></p><p>#Tinnitus?&nbsp;</p><p><br></p><p><br></p><p>When answered NOT_INTERESTED in <b>private hearingcare</b>, why?&nbsp;</p>"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Internal Notes From Call"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/13965563149457.json",
+            "id": 13965563149457,
+            "title": "Internal Notes from No-Show Call",
+            "active": true,
+            "updated_at": "2023-03-23T09:19:04Z",
+            "created_at": "2023-03-23T08:43:52Z",
+            "default": false,
+            "position": 13,
+            "description": null,
+            "actions": [
+                {
+                    "field": "comment_value_html",
+                    "value": "<p><b>Reasons for DNA:</b></p><p><b><br></b></p><p><br></p>"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Internal Notes from No-Show Call"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/360107215897.json",
+            "id": 360107215897,
+            "title": "Email Templates::Appointment Confirmation ",
+            "active": true,
+            "updated_at": "2024-07-03T08:32:45Z",
+            "created_at": "2021-09-01T13:43:18Z",
+            "default": false,
+            "position": 14,
+            "description": "Template for appointment confirmation ONLY(!!!) if original confirmation sent via Sound is lost!!!!; address of the store needs to be filled out manually; Phone Call outcome needs to be filled out manually",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for your call with Boots Hearingcare.<br></p><p><br></p><p>Please find the appointment details below:<br></p><p><br></p><p>Date: {{ticket.ticket_field_360026221297 | date:'%d.%m.%Y'}}<br></p><p>Time: {{ticket.ticket_field_360026056618}}<br></p><p>Duration: {{ticket.ticket_field_option_title_1900001704013}}​&nbsp;<br></p><p>Location:&nbsp;<br></p><p><br></p><p>In the meantime, take a look at our <a href=\"https://storage.googleapis.com/sonova-acdu-public/Customer-Onboarding/220531_boots_customer_brochure_online.pdf\" target=\"_blank\" rel=\"noreferrer\"><u>Boots Hearingcare information brochure</u></a>. It’ll guide you through everything you need to know about your visit to Boots Hearingcare, this includes what will happen before, during, and after your appointment.&nbsp;</p><p><br></p><p>To cancel or reschedule your appointment, please reply to this email or contact us on the following phone number {{dc.standard-boots_phone_number}}, and please also contact me if you have any further questions.<br></p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p>"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "subject",
+                    "value": "Your Request to Boots Hearingcare"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Appointment Confirmation "
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/1900007563933.json",
+            "id": 1900007563933,
+            "title": "Missed & Abandoned Calls",
+            "active": true,
+            "updated_at": "2022-09-13T12:42:00Z",
+            "created_at": "2021-08-31T12:34:19Z",
+            "default": false,
+            "position": 15,
+            "description": "Solves tickets that are not needed for further communication (unsuccessful IB calls & voicemails)",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "brand_id",
+                    "value": "360004564397"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Unsuccessful IB call</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "99_ib_call_failed"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Missed & Abandoned Calls"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/360115009717.json",
+            "id": 360115009717,
+            "title": "Successful IB Calls",
+            "active": true,
+            "updated_at": "2022-07-21T10:16:39Z",
+            "created_at": "2021-10-27T07:20:14Z",
+            "default": false,
+            "position": 16,
+            "description": "Solves tickets that are not needed for further communication (successful IB calls)",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "brand_id",
+                    "value": "360004564397"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Successful IB call</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "40_canceled_-_duplicate_activity"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Successful IB Calls"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/360114594338.json",
+            "id": 360114594338,
+            "title": "Multiple Registrations",
+            "active": true,
+            "updated_at": "2021-10-27T07:30:44Z",
+            "created_at": "2021-10-27T07:29:14Z",
+            "default": false,
+            "position": 17,
+            "description": "Solves tickets that were created by filling out multiple registration forms (duplicates)",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "brand_id",
+                    "value": "360004564397"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Multiple registrations</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "21_duplicate_customer"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Multiple Registrations"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10285916700689.json",
+            "id": 10285916700689,
+            "title": "Spam Tickets::Spam - Other",
+            "active": true,
+            "updated_at": "2023-04-26T12:30:23Z",
+            "created_at": "2022-11-01T15:21:32Z",
+            "default": false,
+            "position": 18,
+            "description": "",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "spam"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Spam - other - solving ticket</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Spam Tickets::Spam - Other"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/14850337671313.json",
+            "id": 14850337671313,
+            "title": "Spam Tickets::Spam - Phone Number and Post Code",
+            "active": true,
+            "updated_at": "2023-04-26T12:31:03Z",
+            "created_at": "2023-04-26T12:31:03Z",
+            "default": false,
+            "position": 19,
+            "description": "",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "101_spam_-_phone_number_and_post_code"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Spam - phone number and post code - solving ticket</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Spam Tickets::Spam - Phone Number and Post Code"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/14850368171537.json",
+            "id": 14850368171537,
+            "title": "Spam Tickets::Spam - Phone Number Only",
+            "active": true,
+            "updated_at": "2023-04-26T12:57:43Z",
+            "created_at": "2023-04-26T12:31:31Z",
+            "default": false,
+            "position": 20,
+            "description": "",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Spam - phone number only - solving ticket</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "104_spam_-_phone_number_only"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Spam Tickets::Spam - Phone Number Only"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/14851267882641.json",
+            "id": 14851267882641,
+            "title": "Spam Tickets::Spam - Email and Post Code",
+            "active": true,
+            "updated_at": "2023-04-26T12:58:50Z",
+            "created_at": "2023-04-26T12:58:50Z",
+            "default": false,
+            "position": 21,
+            "description": "",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Spam - email and post code - solving ticket</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "102_spam_-_email_and_post_code"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Spam Tickets::Spam - Email and Post Code"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/14851284932881.json",
+            "id": 14851284932881,
+            "title": "Spam Tickets::Spam - Email Only",
+            "active": true,
+            "updated_at": "2023-04-26T12:59:15Z",
+            "created_at": "2023-04-26T12:59:15Z",
+            "default": false,
+            "position": 22,
+            "description": "",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Spam - email only - solving ticket</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "103_spam_-_email_only"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Spam Tickets::Spam - Email Only"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/14850343355537.json",
+            "id": 14850343355537,
+            "title": "Spam Tickets::Spam - Name Only",
+            "active": true,
+            "updated_at": "2023-04-26T12:57:55Z",
+            "created_at": "2023-04-26T12:31:54Z",
+            "default": false,
+            "position": 23,
+            "description": "",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "105_spam_-_name_only"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Spam - name only - solving ticket</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Spam Tickets::Spam - Name Only"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/15807084250129.json",
+            "id": 15807084250129,
+            "title": "Spam Tickets::Spam - Inappropriate Language",
+            "active": true,
+            "updated_at": "2023-06-02T07:26:57Z",
+            "created_at": "2023-06-02T07:26:57Z",
+            "default": false,
+            "position": 24,
+            "description": "",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "106_spam_-_inappropriate_language"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Spam - inappropriate language - solving ticket</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Spam Tickets::Spam - Inappropriate Language"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/360107216157.json",
+            "id": 360107216157,
+            "title": "Email Templates::Appointment Cancellation (Customer)",
+            "active": true,
+            "updated_at": "2022-09-07T09:08:55Z",
+            "created_at": "2021-09-01T13:51:48Z",
+            "default": false,
+            "position": 25,
+            "description": "Sends confirmation of cancelled appointment to the customer; Phone Call Outcome is set automatically to \"24 Appointment Cancelled\"",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "subject",
+                    "value": "Boots Hearingcare - Cancelled appointment"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.boots_cancellation_confirmation_manual}}<br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "24_appointment_cancelled"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "custom_fields_1900001704193",
+                    "value": "cancellation"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Appointment Cancellation (Customer)"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/17407420144401.json",
+            "id": 17407420144401,
+            "title": "Email Templates::Appointment Cancellation with Next Availability (Customer) ",
+            "active": true,
+            "updated_at": "2023-07-31T09:18:35Z",
+            "created_at": "2023-07-31T09:18:35Z",
+            "default": false,
+            "position": 26,
+            "description": "Sends confirmation of cancelled appointment to the customer with the option to adjust information manually for next availability at that store; Phone Call Outcome is set automatically to \"24 Appointment Cancelled\"",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "subject",
+                    "value": "Boots Hearingcare - Cancelled appointment"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.macro-boots_appointment_cancelled_customer_nextavailability}}<br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "24_appointment_cancelled"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "custom_fields_1900001704193",
+                    "value": "cancellation"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Appointment Cancellation with Next Availability (Customer) "
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/4903116141329.json",
+            "id": 4903116141329,
+            "title": "Email Templates::Hard of Hearing",
+            "active": true,
+            "updated_at": "2023-06-08T12:52:32Z",
+            "created_at": "2022-03-21T10:45:07Z",
+            "default": false,
+            "position": 27,
+            "description": "Email template for customers who didn't hear well on the phone",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "subject",
+                    "value": "Boots Hearingcare"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.macro-boots_hard_of_hearing}}<br></p>"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Hard of Hearing"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/1900010671633.json",
+            "id": 1900010671633,
+            "title": "Email Templates::Data Deletion Confirmation",
+            "active": true,
+            "updated_at": "2025-02-20T14:10:33Z",
+            "created_at": "2021-09-23T08:00:23Z",
+            "default": false,
+            "position": 28,
+            "description": "Sends confirmation to the customer as soon as their personal data is deleted from Zendesk",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "open"
+                },
+                {
+                    "field": "subject",
+                    "value": "Boots Hearingcare - Cancelled appointment"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}</p><p>&nbsp;</p><p>Thank you for contacting Boots Hearingcare.</p><p>&nbsp;</p><p>Your data deletion request has been received and will be actioned as soon as possible. We apologize for the inconvenience.</p><p>&nbsp;</p><p>Please let me know if you have any further questions.</p><p>&nbsp;</p><p>Best regards,<br>Your Boots Hearingcare team<br>&nbsp;</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "12_data_privacy_request"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "datadel"
+                },
+                {
+                    "field": "group_id",
+                    "value": "1900000526093"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Data Deletion Confirmation"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10286393807761.json",
+            "id": 10286393807761,
+            "title": "Email Templates::Appointment Confirmation (Rescheduled Appointment)",
+            "active": true,
+            "updated_at": "2024-03-26T13:04:13Z",
+            "created_at": "2022-11-01T15:41:56Z",
+            "default": false,
+            "position": 29,
+            "description": "Template for appointment confirmation where we have rescheduled the original appointment for the customer. Please fill out the date of the old appointment + the location and duration of the rescheduled appointment. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for your call with Boots Hearingcare.<br><br>Please find your rescheduled appointment details below:<br></p><p><br></p><p>Date: {{ticket.ticket_field_360026221297 | date:'%d.%m.%Y'}}<br></p><p>Time: {{ticket.ticket_field_360026056618}}</p><p>Duration:&nbsp;<br></p><p>Location:&nbsp;<br></p><p><br></p><p>In the meantime, take a look at our <a href=\"https://storage.googleapis.com/sonova-acdu-public/Customer-Onboarding/220531_boots_customer_brochure_online.pdf\" target=\"_blank\" rel=\"noreferrer\"><u>Boots Hearingcare information brochure</u></a>.&nbsp;</p><p>It’ll guide you through everything you need to know about your visit to Boots Hearingcare, this includes what will happen before, during, and after your appointment.&nbsp;<br></p><p><br></p><p>To cancel or reschedule your appointment, please reply to this email or contact us on the following phone number {{dc.standard-boots_phone_number}}, and please also contact me if you have any further questions.<br></p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p><p><br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "22_appointment_rescheduled"
+                },
+                {
+                    "field": "custom_fields_1900001704193",
+                    "value": "reschedule"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Appointment Confirmation (Rescheduled Appointment)"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10284966343953.json",
+            "id": 10284966343953,
+            "title": "Email Templates::Email only Booking - 1st email - HHC",
+            "active": true,
+            "updated_at": "2023-06-08T12:59:07Z",
+            "created_at": "2022-11-01T14:47:41Z",
+            "default": false,
+            "position": 30,
+            "description": "This is the first message you should consider sending to customers who have an HHC suggested appointment, want e-mail contact only and we require more information from them to continue. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for contacting Boots Hearingcare.</p><p><br></p><p>I would be happy to schedule your appointment via email. In order for me to understand your hearing better, could you please answer the following questions:</p><p><br></p><ul><li><p>Have you had a hearing test before, and if so, what was the outcome? </p></li><li><p>For how long have you been having hearing difficulties? </p></li><li><p>Do you experience any tinnitus (a ringing or buzzing in the ear)?&nbsp;</p></li></ul><p><br></p><p>If you like to receive any exclusive deals or information about our latest products and relevant offers via phone, email, post or text, please reply to this email with your preference.</p><p><br></p><p>I look forward to your reply. I will also make a note that you prefer to be contacted by email rather than phone.</p><p><br></p><p>{{dc.standard-boots_agent_signature}}<br></p><p><br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Email only Booking - 1st email - HHC"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10285129915025.json",
+            "id": 10285129915025,
+            "title": "Email Templates::Email only Booking - 2nd reply - HHC",
+            "active": true,
+            "updated_at": "2024-08-05T10:00:40Z",
+            "created_at": "2022-11-01T14:53:34Z",
+            "default": false,
+            "position": 31,
+            "description": "This is the second reply you can send to customers after receiving the answers to their hearing questions (no hearing aids) + their preference for exclusive deals Please fill out the areas where manual details are required ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br>&nbsp;</p><p>&nbsp;</p><p>Thank you for taking the time to answer my questions.</p><p>&nbsp;</p><p>Based on your answers I would like to book you in for a Hearing Health Check. This is a free <strong>15-minute test</strong> to see if you have any hearing loss and if it’s something that we can help you with. If so, we’ll then book you in for a further appointment.&nbsp;</p><p>&nbsp;</p><p>I can see that your closest Boots Hearingcare store is: XXXXXXXXXXXXX</p><p>&nbsp;</p><p>The next available appointments are:</p><p>&nbsp;</p><p><strong>DD.MM.YY at 00:00 or 00:00</strong><br>&nbsp;</p><p><strong>DD.MM.YY at 00:00 or 00:00</strong><br>&nbsp;</p><p><strong>DD.MM.YY at 00:00 or 00:00</strong></p><p>&nbsp;</p><p>Please let me know what your preferred date and time is. Your prompt reply would be highly appreciated since these appointments get booked up quickly.</p><h3><br>In order for me to create a profile for you in our Boots scheduling system,<i> </i><strong><u>could you please confirm the first line of your address and your date of birth?</u></strong></h3><h3>&nbsp;</h3><p>Should you have any further questions, you are welcome to contact us by either, replying to this email or phone us on {{dc.standard-boots_phone_number}}<br>&nbsp;</p><p>&nbsp;</p><p>{{dc.standard-boots_agent_signature}}<br>&nbsp;</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Email only Booking - 2nd reply - HHC"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10285050337553.json",
+            "id": 10285050337553,
+            "title": "Email Templates::Email only Booking - 1st reply - FHA",
+            "active": true,
+            "updated_at": "2023-06-08T12:58:17Z",
+            "created_at": "2022-11-01T14:50:45Z",
+            "default": false,
+            "position": 32,
+            "description": "This is the first message you should consider sending to customers who have an FHA suggested appointment and we require more information from them to continue. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for contacting Boots Hearingcare.</p><p><br></p><p>I would be happy to schedule your appointment via email. In order for me to understand your hearing better, could you please answer the following questions:</p><p><br></p><ul><li><p>Which company are your current hearing aids from?</p></li><li><p>Are you experiencing any issues with your current hearing aids?</p></li><li><p>Do you experience any tinnitus (a ringing or buzzing in the ear)?&nbsp;</p></li></ul><p><br></p><p>If you like to receive any exclusive deals or information about our latest products and relevant offers via phone, email, post or text, please reply to this email with your preference.</p><p><br></p><p>I look forward to your reply. I will also make a note that you prefer to be contacted by email rather than phone.</p><p><br></p><p>{{dc.standard-boots_agent_signature}}<br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Email only Booking - 1st reply - FHA"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10285169228177.json",
+            "id": 10285169228177,
+            "title": "Email Templates::Email only Booking - 2nd reply - FHA",
+            "active": true,
+            "updated_at": "2024-08-05T10:00:43Z",
+            "created_at": "2022-11-01T14:55:47Z",
+            "default": false,
+            "position": 33,
+            "description": "This is the second reply you can send to customers after receiving the answers to their hearing questions (hearing aids) + their preference for exclusive deals. Please fill out the areas where manual details are required.",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br>&nbsp;</p><p>&nbsp;</p><p>Thank you for taking the time to answer my questions.</p><p>&nbsp;</p><p>Based on your answers I would like to book you in for a free <strong>75-minute</strong>, full hearing assessment. This is a thorough test with an audiologist where they can check your level of hearing loss and provide you with all your options.</p><p>&nbsp;</p><p>I can see that your closest Boots Hearingcare store is: XXXXXXXXXXXXX</p><p>&nbsp;</p><p>The next available appointments are:</p><p><br><strong>DD.MM.YY at 00:00 or 00:00</strong><br>&nbsp;</p><p><strong>DD.MM.YY at 00:00 or 00:00</strong><br>&nbsp;</p><p><strong>DD.MM.YY at 00:00 or 00:00</strong><br>&nbsp;</p><p>Please let me know what your preferred date and time is. Your prompt reply would be highly appreciated since these appointments get booked up quickly.</p><h3><br>In order for me to create a profile for you in our Boots scheduling system,<i> </i><strong><u>could you please confirm the first line of your address and your date of birth?</u></strong></h3><h3>&nbsp;</h3><p>Should you have any further questions, you are welcome to contact us by either, replying to this email or phone us on {{dc.standard-boots_phone_number}}<br>&nbsp;</p><p>&nbsp;</p><p>{{dc.standard-boots_agent_signature}}<br>&nbsp;</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Email only Booking - 2nd reply - FHA"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/23906447236881.json",
+            "id": 23906447236881,
+            "title": "Email Templates::No Show Email ",
+            "active": true,
+            "updated_at": "2024-04-11T07:40:52Z",
+            "created_at": "2024-04-04T11:16:28Z",
+            "default": false,
+            "position": 35,
+            "description": "Email to be sent after 1 call attempt ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}&nbsp;<br></p><p><br></p><p>We were notified that you were not able to attend the free hearing test you booked at Boots Hearingcare. That could be because: &nbsp;</p><p><b><br></b></p><p><b>You could not attend your appointment</b></p><p>If you could not attend your free hearing test we are sorry we did not get to see you instore. Hearing loss is easier to treat the sooner you start, so we would love to invite you back to reschedule your hearing test.&nbsp;</p><p><b><br></b></p><p><b>The appointment didn’t go ahead as planned</b></p><p>If something went wrong on our side, please let us know by replying to this email. </p><p><b><br></b></p><p><b>Ways you can reschedule your free hearing test:</b> </p><ol><li><p><b>Reply to this email </b>with your preferred date and time &nbsp;</p></li></ol><ol><li><p><b>Call us </b>on our number {{dc.standard-boots_phone_number}}</p></li></ol><p><br></p><p>Thank you for your time, and we hope to hear from you soon.</p><p><br></p><p>Kind regards,&nbsp;</p><p><br></p><p>Your Boots Hearingcare Team</p><p><br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "30_not_reached"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::No Show Email "
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/25900159546769.json",
+            "id": 25900159546769,
+            "title": "Email Templates::No Store Nearby",
+            "active": true,
+            "updated_at": "2024-06-13T14:25:12Z",
+            "created_at": "2024-06-13T13:24:39Z",
+            "default": false,
+            "position": 36,
+            "description": "For customers with no store nearby",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}&nbsp;</p><p><br></p><p>Thank you for your interest in a free hearing test with Boots Hearingcare.&nbsp;</p><p><br></p><p>We can see from your postcode that there is no Boots Hearingcare facility in your immediate vicinity. If you are still interested in taking up our offer of a free hearing assessment despite the distance, please reply to this email or contact us via phone on 0344 257 1097, and one of our agents will be happy to help you further.</p><p><br></p><p>Thank you for your time, and we hope to hear from you soon.</p><p><br></p><p>Kind regards,&nbsp;</p><p><br></p><p>Your Boots Hearingcare Team</p><p><br></p><p><br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "31_no_store_nearby"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::No Store Nearby"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10511454554385.json",
+            "id": 10511454554385,
+            "title": "Email Templates:: Price and Product Information",
+            "active": true,
+            "updated_at": "2025-02-05T08:04:18Z",
+            "created_at": "2022-11-10T11:32:01Z",
+            "default": false,
+            "position": 37,
+            "description": "This email is to be sent when a customer is asking about what payment plans we offer",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "26_questions_answered"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br>&nbsp;</p><p>Thank you for contacting Boots Hearingcare.</p><p>&nbsp;</p><p>At Boots Hearingcare, all of our hearing tests and appointments are completely free. When it comes to hearing aids, we only supply high-quality products that will help improve your hearing while complementing your lifestyle.&nbsp;</p><p>&nbsp;</p><p>The price is determined by the type of hearing aid you choose, not the severity of your hearing loss, and because we believe your hearing care should be accessible and affordable. Here is&nbsp;<a href=\"https://www.bootshearingcare.com/hearing-aids/hearing-aid-prices/\">some more information on our products and prices</a>.&nbsp;</p><p>&nbsp;</p><p>You can also take a look at our <a href=\"https://storage.googleapis.com/sonova-acdu-public/Customer-Onboarding/220531_boots_customer_brochure_online.pdf\"><u>Boots Hearingcare information brochure</u></a>. It’ll guide you through everything you need to know about your visit to Boots Hearingcare, this includes what will happen before, during, and after your appointment.&nbsp;</p><p>&nbsp;</p><p>Should you have any further questions or if you would like to get booked in for your free test, you are welcome to contact us by either, replying to this email or phone us on {{dc.standard-boots_phone_number}}</p><p>&nbsp;</p><p>{{dc.standard-boots_agent_signature}}</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates:: Price and Product Information"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/13544187204497.json",
+            "id": 13544187204497,
+            "title": "Email Templates::Reschedule via email",
+            "active": true,
+            "updated_at": "2023-06-08T12:55:12Z",
+            "created_at": "2023-03-07T13:48:24Z",
+            "default": false,
+            "position": 38,
+            "description": "An email template to use for when a customer would like to reschedule their booking via email.",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for contacting Boots Hearingcare. I would be happy to reschedule your appointment for you.</p><p><br></p><p>The next available appointments at <b>*Store*</b> are:</p><p><br></p><p><b>DD.MM.YY at 00:00 or 00:00</b><br></p><p><b>DD.MM.YY at 00:00 or 00:00<br></b></p><p><b>DD.MM.YY at 00:00 or 00:00</b></p><p><br></p><p>Should you have any further questions, you are welcome to contact us by either, replying to this email or phone us on {{dc.standard-boots_phone_number}}<br></p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p><p><br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Reschedule via email"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/12641897866897.json",
+            "id": 12641897866897,
+            "title": "Email Templates::Wax Removal Email",
+            "active": true,
+            "updated_at": "2023-11-16T09:08:14Z",
+            "created_at": "2023-02-01T12:51:50Z",
+            "default": false,
+            "position": 39,
+            "description": "An email in place to provide store's that offer wax removals",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for your call with Boots Hearingcare.</p><p><br></p><p>In regards to your inquiry about wax removal appointments, you will need to phone 0345 270 0999 to book an appointment.</p><p><br></p><p>When you are ready to make your <b>hearing test appointment,</b>&nbsp;simply reply to this email or call us on the following phone number 0344 257 1097.</p><p><br></p><p>Please also feel free to contact me if you have any further questions.</p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p><p><br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Wax Removal Email"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10285669807761.json",
+            "id": 10285669807761,
+            "title": "Email Templates::Closest BHC (No Postcode) - 1st Reply",
+            "active": true,
+            "updated_at": "2023-08-30T12:57:16Z",
+            "created_at": "2022-11-01T15:11:15Z",
+            "default": false,
+            "position": 40,
+            "description": "This is the first message to send to customers who want to know their nearest BHC but haven't provided us with their postcode on their survey. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br> </p><p>Thank you for your interest in a free test with Boots Hearingcare.<br></p><p><br></p><p>In order for me to look up the closest Boots Hearingcare store to you, could you please confirm your address including your postcode? </p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Closest BHC (No Postcode) - 1st Reply"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10285766233873.json",
+            "id": 10285766233873,
+            "title": "Email Templates::Providing Closest Store - 2nd Reply",
+            "active": true,
+            "updated_at": "2023-06-08T12:54:30Z",
+            "created_at": "2022-11-01T15:16:13Z",
+            "default": false,
+            "position": 41,
+            "description": "This is the second reply we can send to customers after receiving their address details from the first message or if we have those details already from the survey. Please fill out the store name and address sections where applicable. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for your reply.</p><p><br></p><p>After looking at my system, I can confirm the closest Boots Hearingcare stores to you are:</p><p><br></p><p><b>Storename 1</b></p><p><b>Store address 1 </b></p><p><b><br></b></p><p><b>Storename 2</b></p><p><b>Store address 2</b></p><p><b><br></b></p><p>Please let me know which Boots Hearingcare you’d prefer and I can let you know of their availability. </p><p><br></p><p>{{dc.standard-boots_agent_signature}}<br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Providing Closest Store - 2nd Reply"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10286826657553.json",
+            "id": 10286826657553,
+            "title": "Email Templates::Next Availability - Email Only Customers",
+            "active": true,
+            "updated_at": "2023-06-08T12:54:13Z",
+            "created_at": "2022-11-01T15:59:20Z",
+            "default": false,
+            "position": 42,
+            "description": "This is to send to customers who wants quick availability for dates and times at their closest BHC store. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for contacting Boots Hearingcare.</p><p><br></p><p>The next available appointments in your closest store are:<br><br><b>DD.MM.YY at 00:00 or 00:00</b><br><b>DD.MM.YY at 00:00 or 00:00<br>DD.MM.YY at 00:00 or 00:00<br></b><br><br></p><p>Please let me know what your preferred date and time is and I can go ahead and book that in for you.<br><br>If you have any further questions, please don’t hesitate to ask.<br><br>{{dc.standard-boots_agent_signature}}<br></p>"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Next Availability - Email Only Customers"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/10285263338769.json",
+            "id": 10285263338769,
+            "title": "Email Templates::Home Visits Q",
+            "active": true,
+            "updated_at": "2023-06-08T12:53:59Z",
+            "created_at": "2022-11-01T15:00:59Z",
+            "default": false,
+            "position": 43,
+            "description": "This is to be used if a customer asks if Boots Hearingcare provides home visits or not. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for your reply and interest in Boots Hearingcare.</p><p><br></p><p>At this time, we do not conduct home visits for tests. However, I will make a note in our system in case anything changes in the future </p><p><br></p><p>Should you have any further questions, you are welcome to contact us by either, replying to this email or phone us on {{dc.standard-boots_phone_number}}</p><p><br></p><p>{{dc.standard-boots_agent_signature}}<br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "28_request_for_homevisit"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Home Visits Q"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/13543033145489.json",
+            "id": 13543033145489,
+            "title": "Email Templates:: Customer Will Call Back Later",
+            "active": true,
+            "updated_at": "2023-06-08T12:33:02Z",
+            "created_at": "2023-03-07T13:14:11Z",
+            "default": false,
+            "position": 44,
+            "description": "This email is for customers who explain that they would prefer to call us back at a later date. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "53_not_interested_-_cx_call_us_back"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for your call with Boots Hearingcare.</p><p><br></p><p>My call was in regards to the survey that you filled out online for a free hearing test at your local Boots Hearingcare store.</p><p><br></p><p>It’s important to monitor your hearing, including the health of your ears. To make sure that everything is working as it should. If you’re over 50, we’d recommend you get your hearing checked at least every two years. We can check if your hearing has changed since your last appointment.</p><p><br></p><p>Take a look at our <a href=\"https://storage.googleapis.com/sonova-acdu-public/Customer-Onboarding/220531_boots_customer_brochure_online.pdf\" target=\"_blank\" rel=\"noreferrer\"><u>Boots Hearingcare information brochure</u></a>. It’ll guide you through everything you need to know about your visit to Boots Hearingcare, this includes what will happen before, during, and after your appointment.&nbsp;</p><p><br></p><p>Should you have any further questions or if you would like to get booked in for your free test, you are welcome to contact us by either, replying to this email or phone us on {{dc.standard-boots_phone_number}}</p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p>"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates:: Customer Will Call Back Later"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/13544466695185.json",
+            "id": 13544466695185,
+            "title": "Email Templates::Customer Under 50 - No Loss",
+            "active": true,
+            "updated_at": "2023-06-08T12:33:17Z",
+            "created_at": "2023-03-07T13:56:23Z",
+            "default": false,
+            "position": 45,
+            "description": "This email is to be used for customers who are under 50 but have no confirmed or diagnosed loss. ",
+            "actions": [
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for responding to our questions about your hearing. Looking at your answers, it appears that you may not need a hearing assessment at this time.&nbsp; <br></p><p><br></p><p>We know that a questionnaire can’t pick up on everything, like treatable underlying health issues that can cause hearing loss. If you still have concerns about your hearing, we recommend that you contact your local GP or Ear Nose and Throat Doctor to check the health of your ears.&nbsp; &nbsp;<br></p><p><br></p><p>We will be delighted to see you and support your hearing needs once we know any medical issue is eliminated or treated.&nbsp; <br></p><p><br></p><p>We wish you all the best,&nbsp;</p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p>"
+                },
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "61_referred_to_gp"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Customer Under 50 - No Loss"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/13544880832145.json",
+            "id": 13544880832145,
+            "title": "Email Templates::Customer Under 18",
+            "active": true,
+            "updated_at": "2023-06-08T12:33:33Z",
+            "created_at": "2023-03-07T14:06:08Z",
+            "default": false,
+            "position": 46,
+            "description": "This email is for people who are requesting a test who are under the age of 18 years old.",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for contacting Boots Hearingcare.&nbsp;</p><p><br></p><p>At this time, we do not offer hearing tests to any persons under the age of 18 years old.&nbsp;</p><p><br></p><p>There may be some treatable underlying health issues causing your hearing difficulties. Therefore we’d recommend that you visit your local GP or Ear Nose and Throat Doctor if your difficulties continue.&nbsp;</p><p><br></p><p>We wish you all the best,</p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p>"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "61_referred_to_gp"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Customer Under 18"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/360106318798.json",
+            "id": 360106318798,
+            "title": "Email Templates::Empty Template",
+            "active": true,
+            "updated_at": "2021-09-03T09:19:02Z",
+            "created_at": "2021-08-30T07:56:03Z",
+            "default": false,
+            "position": 47,
+            "description": "Empty Email-Template, contains only customer's name (signature is added automaticall when ticket is solved), Phone Call Outcome needs to be added",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "subject",
+                    "value": "Boots Hearingcare"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.boots_empty_template}}<br></p>"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Empty Template"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/360105310098.json",
+            "id": 360105310098,
+            "title": "Email Templates::Wrong Phone Number",
+            "active": true,
+            "updated_at": "2022-06-03T15:56:16Z",
+            "created_at": "2021-08-23T08:37:03Z",
+            "default": false,
+            "position": 48,
+            "description": "Email template for customers with wrong phone number ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.boots_wrong_phone_number}}<br></p>"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "32_incorrect_data"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Wrong Phone Number"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/19215050380561.json",
+            "id": 19215050380561,
+            "title": "Email Templates::Backlog Customer Not Reached Bulk Update (Supervisor)",
+            "active": true,
+            "updated_at": "2023-10-09T09:50:20Z",
+            "created_at": "2023-10-09T09:47:52Z",
+            "default": false,
+            "position": 50,
+            "description": "Email template for backlog situations. Closes ticket with \"Backlog\" phone call outcome! For supervisors only.",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}} </p><p><br></p><p>Thank you for registering with Boots Hearingcare for a free hearing test - you've already taken the first step to looking after your hearing.<br></p><p><br></p><p>Unfortunately, we were unable to reach you via the phone number you shared with us. <br></p><p><br></p><p>Please give us a call on our toll-free number to arrange a date and time for your free hearing test.<br></p><p><br></p><p>{{dc.standard-boots_phone_number}} (8am-6pm, Monday-Friday. 9am-5pm Saturday)<br></p><p><br></p><p>We look forward to seeing you at your local Boots Hearingcare store!&nbsp; <br></p><p><br></p><p>Kind regards,<br></p><p><br></p><p>Your Boots Hearingcare team</p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "backlog"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "backlog"
+                },
+                {
+                    "field": "subject",
+                    "value": "Boots Hearingcare – we've been trying to reach you"
+                }
+            ],
+            "restriction": {
+                "type": "Group",
+                "id": 1900000526093,
+                "ids": [
+                    1900000526093
+                ]
+            },
+            "raw_title": "Email Templates::Backlog Customer Not Reached Bulk Update (Supervisor)"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/360106464198.json",
+            "id": 360106464198,
+            "title": "Forward to::Supervisor",
+            "active": true,
+            "updated_at": "2023-06-08T12:31:06Z",
+            "created_at": "2021-08-31T08:29:34Z",
+            "default": false,
+            "position": 51,
+            "description": "In case of escalation, data deletion request etc. ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "open"
+                },
+                {
+                    "field": "group_id",
+                    "value": "1900000526093"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Forwarded to Supervisor</p><p><br></p><p>[Please describe the situation]</p>"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": ""
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "11_escalated"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Forward to::Supervisor"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/6495953871889.json",
+            "id": 6495953871889,
+            "title": "FHA Booking",
+            "active": true,
+            "updated_at": "2024-03-26T13:04:25Z",
+            "created_at": "2022-05-31T09:31:47Z",
+            "default": false,
+            "position": 52,
+            "description": null,
+            "actions": [
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "custom_fields_1900001704193",
+                    "value": "schedule"
+                },
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "custom_fields_1900001704013",
+                    "value": "fha"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "01_appointment__sales__booked"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "custom_fields_12951991412753",
+                    "value": ""
+                }
+            ],
+            "restriction": null,
+            "raw_title": "FHA Booking"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/6495898970897.json",
+            "id": 6495898970897,
+            "title": "HHC Booking",
+            "active": true,
+            "updated_at": "2023-02-13T10:58:22Z",
+            "created_at": "2022-05-31T09:34:10Z",
+            "default": false,
+            "position": 53,
+            "description": null,
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "custom_fields_1900001704193",
+                    "value": "schedule"
+                },
+                {
+                    "field": "custom_fields_1900001704013",
+                    "value": "scr"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "01_appointment__sales__booked"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "custom_fields_12951991412753",
+                    "value": ""
+                }
+            ],
+            "restriction": null,
+            "raw_title": "HHC Booking"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/11178835568273.json",
+            "id": 11178835568273,
+            "title": "Email Templates::Email during IT issues",
+            "active": true,
+            "updated_at": "2023-06-08T12:53:07Z",
+            "created_at": "2022-12-06T09:39:16Z",
+            "default": false,
+            "position": 54,
+            "description": "To be used during IT issues e.g. Sound being down",
+            "actions": [
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for contacting Boots Hearingcare.</p><p><br></p><p>At this time, we were unable to reach you via the number you provided. We will contact you again soon on the following number {{dc.standard-boots_phone_number}}. Alternatively, I would be happy to schedule your appointment via email.&nbsp;</p><p><br></p><p>In order for me to understand your hearing better, could you please answer the following questions:</p><p><br></p><ul><li><p>Which company are your current hearing aids from?</p></li><li><p>Are you experiencing any issues with your current hearing aids?</p></li><li><p>Do you experience any tinnitus (a ringing or buzzing in the ear)?&nbsp;</p></li></ul><p><br></p><p>If you like to receive any exclusive deals or information about our latest products and relevant offers via phone, email, post or text, please reply to this email with your preference.</p><p><br></p><p>I look forward to hearing from you.&nbsp;</p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p><p><br></p>"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Email during IT issues"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/14637938270737.json",
+            "id": 14637938270737,
+            "title": "Email Templates::Samaritans Email",
+            "active": true,
+            "updated_at": "2023-06-08T12:52:46Z",
+            "created_at": "2023-04-18T11:08:20Z",
+            "default": false,
+            "position": 56,
+            "description": "An email to send to customers who have expressed that they're struggling mentally.",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br></p><p><br></p><p>Thank you for reaching out. I appreciate that reaching out can be really difficult.</p><p><br></p><p>Sometimes it's easier to speak to people you don't know as there's no pressure. The Samaritans are available to call 24 hours a day, 365 days of the year and they're always available to listen and help - 116 123</p><p><br></p><p>I find that writing down feelings can also help understand them better. If you think that this is better for you, you can also email them through their website.</p><p><a href=\"https://www.samaritans.org/how-we-can-help/contact-samaritan/write-email/\" target=\"_blank\" rel=\"noreferrer\">https://www.samaritans.org/how-we-can-help/contact-samaritan/write-email/</a></p><p><br></p><p>I am in no way trained in giving advice for such situations, though I want you to know that there's help out there and you're not alone in your feelings.</p><p><br></p><p>Please take care of yourself.</p><p><br></p><p>All the best,</p><p>{{dc.standard-boots_agent_signature_simple}}</p><p><br></p>"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Samaritans Email"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/11941771675665.json",
+            "id": 11941771675665,
+            "title": "Email Templates::Backlog Customer Not Reached - October - New (Supervisor)",
+            "active": true,
+            "updated_at": "2023-08-03T08:49:50Z",
+            "created_at": "2023-01-05T14:07:53Z",
+            "default": false,
+            "position": 57,
+            "description": null,
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}<br><br>Thank you for your interest in Boots Hearingcare. <br><br></p><p>You filled in our questionnaire and told us you would like to have your hearing tested. </p><p><br></p><p>Due to the large&nbsp;volume of requests we have received recently, we were unable to reach you – we're sorry about that.  </p><p><br></p><p>Would you still like to book a free hearing test? Just call the number below and one of our agents will be happy to help you.  </p><p><br></p><p> {{dc.standard-boots_phone_number}}<br></p><p><br></p><p>Thank you, </p><p><br></p><p>Your Boots Hearingcare Team </p><p><br></p>"
+                },
+                {
+                    "field": "subject",
+                    "value": "Still interested in a free hearing test? "
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "backlog"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "backlog"
+                }
+            ],
+            "restriction": {
+                "type": "Group",
+                "id": 1900000526093,
+                "ids": [
+                    1900000526093
+                ]
+            },
+            "raw_title": "Email Templates::Backlog Customer Not Reached - October - New (Supervisor)"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/15931669482001.json",
+            "id": 15931669482001,
+            "title": "Close Ticket - No Contact",
+            "active": true,
+            "updated_at": "2023-08-03T08:49:40Z",
+            "created_at": "2023-06-06T14:08:33Z",
+            "default": false,
+            "position": 58,
+            "description": "To be used if a customer does not want to be contacted again ",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "open"
+                },
+                {
+                    "field": "group_id",
+                    "value": "1900000526093"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Closing. Not interested in our company service. See note above.&nbsp;</p><p><br></p>"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "8003666696209"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "55_not_interested_in_our_company_service"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "notinterestedinourcompanyservice"
+                }
+            ],
+            "restriction": {
+                "type": "Group",
+                "id": 1900000526093,
+                "ids": [
+                    1900000526093
+                ]
+            },
+            "raw_title": "Close Ticket - No Contact"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/27644660704017.json",
+            "id": 27644660704017,
+            "title": "Email Templates::Review Appointment Request",
+            "active": true,
+            "updated_at": "2024-08-30T11:55:58Z",
+            "created_at": "2024-08-19T14:19:01Z",
+            "default": false,
+            "position": 60,
+            "description": "Email template to redirect review appointments to Boots CCC",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "solved"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                },
+                {
+                    "field": "subject",
+                    "value": "Boots Hearingcare"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>{{dc.standard-salutation}}</p><p><br></p><p>Thank you for contacting Boots Hearingcare, we have received your request for an initial free hearing assessment.&nbsp;</p><p><br></p><p>Our records show that you are already a customer with Boots Hearingcare and that you are due for a free review of your hearing. To book your yearly free review appointment, please send an email to&nbsp;<a href=\"info@bootshearingcare.co.uk\" target=\"_blank\" rel=\"noreferrer\">info@bootshearingcare.co.uk</a> or you can reach us by phone calling the number&nbsp;<b>0345 270 0999.</b><br><br>If you are trying to book an appointment that isn’t a review for a new client you can call us on this number {{dc.standard-boots_phone_number}} or simply reply to this email.&nbsp;</p><p><br></p><p>Should you have any further questions, please don't hesitate to ask.</p><p><br></p><p>{{dc.standard-boots_agent_signature}}</p>"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "true"
+                },
+                {
+                    "field": "custom_fields_1900001672873",
+                    "value": "27_information_sent"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Email Templates::Review Appointment Request"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/29474952531985.json",
+            "id": 29474952531985,
+            "title": "Callback - No Available Appointments",
+            "active": true,
+            "updated_at": "2024-10-30T08:23:54Z",
+            "created_at": "2024-10-24T09:41:40Z",
+            "default": false,
+            "position": 61,
+            "description": "Callback for customers without appointment availability within 8 weeks",
+            "actions": [
+                {
+                    "field": "status",
+                    "value": "pending"
+                },
+                {
+                    "field": "current_tags",
+                    "value": "no_availability_8weeks"
+                },
+                {
+                    "field": "comment_mode_is_public",
+                    "value": "false"
+                },
+                {
+                    "field": "comment_value_html",
+                    "value": "<p>Closest store for customer:</p>"
+                },
+                {
+                    "field": "remove_tags",
+                    "value": "automated_callback"
+                },
+                {
+                    "field": "group_id",
+                    "value": "1900000526053"
+                },
+                {
+                    "field": "assignee_id",
+                    "value": "current_user"
+                }
+            ],
+            "restriction": null,
+            "raw_title": "Callback - No Available Appointments"
+        },
+        {
+            "url": "https://bootshelpdesk.zendesk.com/api/v2/macros/36686875739409.json",
+            "id": 36686875739409,
+            "title": "High Prio for Open Lead Tickets 1A, 1E and 1F",
+            "active": true,
+            "updated_at": "2025-06-30T11:45:36Z",
+            "created_at": "2025-06-30T11:44:36Z",
+            "default": false,
+            "position": 62,
+            "description": "",
+            "actions": [
+                {
+                    "field": "priority",
+                    "value": "high"
+                }
+            ],
+            "restriction": {
+                "type": "User",
+                "id": 14637065041425
+            },
+            "raw_title": "High Prio for Open Lead Tickets 1A, 1E and 1F"
+        }
+    ],
+    "next_page": null,
+    "previous_page": null,
+    "count": 55
+}
